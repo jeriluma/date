@@ -1,0 +1,73 @@
+/* ================ GRID LAYOUT ================ */
+
+.row, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, 
+.col-7, .col-8, .col-9, .col-10, .col-11 {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+	clear: both;
+	overflow: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.row {
+	width: 100%;
+	clear: both;
+	padding-top: 5px;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, 
+.col-7, .col-8, .col-9, .col-10, .col-11 {
+	float: left;
+	padding-right: 5px;
+}
+
+.col-1 {
+	width: 8.33%;
+}
+
+.col-2 {
+	width: 16.66%;
+}
+
+.col-3 {
+	width: 24.99%;
+}
+
+.col-4 {
+	width: 33.32%;
+}
+
+.col-5 {
+	width: 41.65%;
+}
+
+.col-6 {
+	width: 49.98%;
+}
+
+.col-7 {
+	width: 58.31%;
+}
+
+.col-8 {
+	width: 66.64%;
+}
+
+.col-9 {
+	width: 74.97%;
+}
+
+.col-10 {
+	width: 83.33%;
+}
+
+.col-11 {
+	width: 91.63%;
+}
