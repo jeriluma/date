@@ -32,6 +32,7 @@ function getEvents(dateLocation) {
         success: function (data) {
         	// $(".loader").hide();
         	// alert("success");
+        	formatEvents();
         },
         error: function (xhr, status, error) {
             // $(".loader").hide();
@@ -40,6 +41,6 @@ function getEvents(dateLocation) {
     });
 }
 
-function formatEvents(data) {
+function formatEvents() {
 
 }
