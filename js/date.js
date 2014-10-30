@@ -2,6 +2,7 @@
 $(function(){
 	$(".template").hide();
 
+    // searches when typing
 	// $("input[type=search]").keyup(function() {
 	// 	getDates();
 	// });
@@ -19,11 +20,15 @@ function getDates() {
 
 	// alert(dateLocation + ", " + dateEvent + ", " +dateEat);
 
+    // clean up / validate input data
+
 	// getEvents();
 	getEats();
 }
 
 function getEvents(dateLocation) {
+    // $(".loader").show();
+
 	$.ajax({
         type: "post",
         url: "http://api.eventful.com/json/events/search",
@@ -46,23 +51,31 @@ function getEvents(dateLocation) {
 }
 
 function getEats() {
+    var Consumer_Key = "sTOUSubEaIhpr1j9dvfsjQ";
+    var Consumer_Secret = "wBQhbIhomIZqmJYwMTcRlH3A7wA";
+    var Token = "s0dgcSrQLI3jH1_nLygF11r-L0mmiLod";
+    var Token_Secret = "iDCdK6XXxwLQ0_CWVn_pD1xknZk";
+
 	$.ajax({
-        type: "get",
-        url: "http://api.yelp.com/v2/search",
+        type: "post",
+        url: "http://api.yelp.com/v2/search?_=" + Math.round((new Date()).getTime() / 1000),
         data: {
-        	oauth_consumer_key: "sTOUSubEaIhpr1j9dvfsjQ",
-        	oauth_token: "s0dgcSrQLI3jH1_nLygF11r-L0mmiLod",
-        	oauth_signature_method: "hmac-sha1",
-        	oauth_signature: "wBQhbIhomIZqmJYwMTcRlH3A7wA",
-        	oauth_timestamp: new Date().getSeconds(),
-        	oauth_nonce: makeid()
+            oauth_consumer_key: 
+        	oauth_consumer_key: Consumer_Key,
+            oauth_nonce: makeid(),
+        	oauth_signature_method: "HMAC-SHA1",
+        	oauth_signature: Consumer_Secret + "%26" + Token_Secret,
+        	oauth_timestamp: Math.round((new Date()).getTime() / 1000),
+        	oauth_token: Token,
+
+            term: "food"
         },
         contentType: "application/json; charset=utf-8",
         dataType: "jsonp",
         success: function (data) {
         	// $(".loader").hide();
         	// alert("success");
-        	formatEvents();
+        	formatEats();
         },
         error: function (xhr, status, error) {
             // $(".loader").hide();
@@ -71,12 +84,11 @@ function getEats() {
     });
 }
 
-function makeid()
-{
+function makeid() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    for( var i=0; i < 5; i++ )
+    for(var i=0; i < 5; i++ )
         text += possible.charAt(Math.floor(Math.random() * possible.length));
 
     return text;
@@ -84,5 +96,9 @@ function makeid()
 
 
 function formatEvents() {
+
+}
+
+function formatEats() {
 
 }
