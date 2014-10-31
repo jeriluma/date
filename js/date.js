@@ -22,13 +22,13 @@ function getDates() {
 
     // clean up / validate input data
 
+    // $(".loader").show();
+
 	// getEvents();
 	getEats();
 }
 
 function getEvents(dateLocation) {
-    // $(".loader").show();
-
 	$.ajax({
         type: "post",
         url: "http://api.eventful.com/json/events/search",
@@ -51,12 +51,17 @@ function getEvents(dateLocation) {
 }
 
 function getEats() {
-    var Consumer_Key = "sTOUSubEaIhpr1j9dvfsjQ";
-    var Consumer_Secret = "wBQhbIhomIZqmJYwMTcRlH3A7wA";
-    var Token = "s0dgcSrQLI3jH1_nLygF11r-L0mmiLod";
-    var Token_Secret = "iDCdK6XXxwLQ0_CWVn_pD1xknZk";
-
-
+    $.ajax({
+        type: "post",
+        url: "js/googleplaces.php",
+        success: function (data) {
+            $("#date-container").html(JSON.stringify(data['results']));
+        },
+        error: function (xhr, status, error) {
+            // $(".loader").hide();
+            // alert("error");
+        }
+    });
 }
 
 function formatEvents() {
