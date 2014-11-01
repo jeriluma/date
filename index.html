@@ -31,6 +31,23 @@
 
 		<div id="date-container"></div>
 
+		<div id="calendar">
+			<div id="calendar-month"></div>
+			<div id="calendar-month-navigation">
+				<button id="calendar-month-before">^^</button>
+				<button id="calendar-month-after">vv</button>
+			<div class="row">
+				<div class="col-week">Sun</div>
+				<div class="col-week">Mon</div>
+				<div class="col-week">Tue</div>
+				<div class="col-week">Wed</div>
+				<div class="col-week">Thu</div>
+				<div class="col-week">Fri</div>
+				<div class="col-week">Sat</div>
+			</div>
+			<div class="day-container row"></div>
+		</div>
+
 		<div class="footer">
 			<div class="eventful-badge eventful-small">
 				<img src="http://api.eventful.com/images/powered/eventful_58x20.gif"
@@ -58,5 +75,8 @@
 			<div><img class="image" src=""></div>
 		</div>
 	</div>
+
+	<!-- Day Template -->
+	<div class="template col-day-template col-day"><span></span></div>
 </body>
 </html>

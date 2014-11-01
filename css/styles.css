@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100);
 @import url(reset.css);
 @import url(grid.css);
 
@@ -49,4 +49,46 @@ label {
 
 #plan-button:focus {
 	border-color: rgb(20, 200, 220);
+}
+
+#calendar-month {
+	text-align: center;
+}
+
+.col-day, .col-day-empty, .col-week {
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+	float: left;
+	margin-top: 5px;
+	margin-right: 5px;
+	width: 12.22%;
+}
+
+.col-day, .col-day-empty {
+	text-align: center;
+	border: 1px solid #DDD;
+	height: 70px;
+	font-size: 120%;
+	font-weight: 100;
+}
+
+.col-day-empty {
+	border: 1px solid #FFF;
+}
+
+.col-day:hover {
+	color: rgb(20, 200, 220);
+	border: 2px solid rgb(20, 200, 220);
+	font-weight: 300;
+	cursor: pointer;
+}
+
+.col-day span {
+	display: inline-block;
+	vertical-align: sub;
+}
+
+.col-day-today {
+	color: rgb(20, 200, 220);
+	border: 2px solid rgb(20, 200, 220);
 }
