@@ -1,13 +1,56 @@
 // document ready function
 $(function(){
 	$(".template").hide();
+    $(".col-time div").hide();
+    $(".col-event div").hide();
+    $(".col-eat div").hide();
 
-    // searches when typing
-	// $("input[type=search]").keyup(function() {
-	// 	getEventsEats();
-	// });
+    $(".col-location").click(function() {
+        $(this).toggleClass("col-location-highlight");
+    });
+
+    $(".col-time").click(function() {
+        $(this).toggleClass("col-time-highlight");
+    });
+
+    $(".col-time").mouseover(function() {
+         $(this).find("div").show();
+    });
+
+    $(".col-time").mouseout(function() {
+         $(this).find("div").hide();
+    });
 
     calendar();
+
+    $(".col-event").click(function() {
+        $(this).toggleClass("col-eat-highlight");
+    });
+
+    $(".col-event").mouseover(function() {
+         $(this).find("div").show();
+    });
+
+    $(".col-event").mouseout(function() {
+         $(this).find("div").hide();
+    });
+
+    $(".col-eat").click(function() {
+        $(this).toggleClass("col-eat-highlight");
+    });
+
+    $(".col-eat").mouseover(function() {
+         $(this).find("div").show();
+    });
+
+    $(".col-eat").mouseout(function() {
+         $(this).find("div").hide();
+    });
+
+    // searches when typing
+    // $("input[type=search]").keyup(function() {
+    //  getEventsEats();
+    // });
 
 	$("#plan-my-date").submit(function() {
 		getEventsEats();
@@ -88,7 +131,8 @@ function populateCalendar(d) {
         templateClone = template.clone();
         templateClone.html("");
         templateClone.removeClass("col-day-template");
-        templateClone.removeClass("col-day");
+        // templateClone.removeClass("col-day");
+        // templateClone.addClass("col-day-width");
         templateClone.addClass("col-day-empty");
         templateClone.show();
         container.append(templateClone);
@@ -105,6 +149,7 @@ function populateCalendar(d) {
     }
 
     $(".col-day").click(function() {
+        $(this).toggleClass("col-day-highlight");
         console.log(d.getMonth() + 1 
             + $(this).find("span").html() 
             + d.getUTCFullYear());

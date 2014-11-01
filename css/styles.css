@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100);
+@import url(http://fonts.googleapis.com/css?family=Roboto:600,400,300,100);
 @import url(reset.css);
 @import url(grid.css);
 
@@ -28,14 +28,80 @@ body {
 }
 
 h1 {
-	font-size: 200%;
+	text-transform: uppercase;
+	font-weight: 400;
+	text-align: center;
+	font-size: 140%;
+	margin-top: 50px;
+	margin-bottom: 10px;
+} 
+
+h1 label {
+	display: block;
+	text-transform: uppercase;
+	font-weight: 400;
+	text-align: left;
+	font-size: 140%;
+	margin-top: 50px;
+	margin-bottom: 10px;
 }
 
-label {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16pt;
+#header {
+	background-color: #A80000;
+	padding: 50px;
+	display: inline-block;
+	width: 100%;
+}
+
+#title {
+	text-transform: uppercase;
+	font-weight: 100;
+	text-align: center;
+	font-size: 400%;
+	color: #FFF;
+	margin: 0;
+}
+
+#title span {
+	display: block;
+	font-weight: 100;
+	font-size: 50%;
+	text-transform: none;
+}
+
+#footer {
+	background-color: #EEE;
+	padding: 50px;
+	margin-top: 50px;
+	width: 100%;
+}
+
+#footer img {
+	margin-top: 20px;
+}
+
+.footer-information {
+	font-weight: 300;
+	font-size: 80%;
+	text-align: center;
+}
+
+h2 {
 	font-weight: 400;
-	line-height: 1.5;
+	font-size: 110%;
+}
+
+h3 {
+	text-align: center;
+	font-weight: 400;
+	font-size: 100%;
+	color: #A80000;
+}
+
+h4 {
+	text-align: center;
+	font-weight: 400;
+	text-transform: uppercase;
 }
 
 #plan-button {
@@ -47,29 +113,30 @@ label {
 	line-height: 1.5;
 }
 
-#plan-button:focus {
-	border-color: rgb(20, 200, 220);
-}
-
-#calendar-month {
-	text-align: center;
-}
-
-.col-day, .col-day-empty, .col-week {
+.col-day-width {
 	-moz-box-sizing: border-box;
     box-sizing: border-box;
 	float: left;
-	margin-top: 5px;
-	margin-right: 5px;
-	width: 12.22%;
+	width: 14.28%;
 }
 
-.col-day, .col-day-empty {
+.col-day, .col-week {
+	margin-top: 10px;
+	margin-right: 10px;
 	text-align: center;
 	border: 1px solid #DDD;
 	height: 70px;
 	font-size: 120%;
-	font-weight: 100;
+	font-weight: 300;
+}
+
+.col-week {
+	font-weight: 600;
+	font-size: 80%;
+	color: #444;
+	border: 0;
+	text-align: left;
+	height: auto;
 }
 
 .col-day-empty {
@@ -77,18 +144,131 @@ label {
 }
 
 .col-day:hover {
-	color: rgb(20, 200, 220);
-	border: 2px solid rgb(20, 200, 220);
-	font-weight: 300;
+	color: #FF4800;
+	border: 1px solid #FF4800;
 	cursor: pointer;
 }
 
 .col-day span {
-	display: inline-block;
-	vertical-align: sub;
+	position: relative;
+	top: 30%;
+	transform: translateY(-50%);
 }
 
 .col-day-today {
-	color: rgb(20, 200, 220);
-	border: 2px solid rgb(20, 200, 220);
+	color: #FF4800;
+	font-weight: 400;
+}
+
+.col-day-highlight, .col-day-highlight:hover {
+	border: 1px solid #A80000;
+	color: #A80000;
+	font-weight: 400;
+}
+
+.col-time, .col-location, .col-event, .col-eat {
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+	text-align: center;
+	height: 100px;
+	margin-top: 10px;
+	margin-right: 10px;
+	border: 1px solid #BBB;
+}
+
+
+
+.col-time div, .col-time h3, 
+.col-location div, .col-location h3,
+.col-event div, .col-event h3,
+.col-eat div, .col-eat h3 {
+	position: relative;
+	top: 30%;
+	transform: translateY(-50%);
+}
+
+.col-time:hover, 
+.col-location:hover, 
+.col-event:hover,
+.col-eat:hover {
+	border: 1px solid #FF4800;
+	cursor: pointer;
+}
+
+.col-time:hover h3, 
+.col-location:hover h3, 
+.col-event:hover h3,
+.col-eat:hover h3 {
+	color: #FF4800;
+}
+
+.col-time-highlight, .col-time-highlight:hover,
+.col-location-highlight, .col-location-highlight:hover,
+.col-event-highlight, .col-event-highlight:hover,
+.col-eat-highlight, .col-eat-highlight:hover {
+	border: 1px solid #A80000;
+}
+
+.col-time-highlight h3, .col-time-highlight:hover h3,
+.col-location-highlight h3, .col-time-location:hover h3,
+.col-event-highlight h3, .col-event-highlight:hover h3,
+.col-eat-highlight h3, .col-eat-highlight:hover h3 {
+	color: #A80000;
+}
+
+.col-time div, .col-event div, .col-eat div {
+	font-size: 80%;
+}
+
+.col-location div {
+	text-align: center;
+	font-size: 100%;
+}
+
+#plan-my-date {
+	margin: 0 auto;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 50px;
+	background-color: #FF4800;
+	color: #FFF;
+	height: 40px;
+	font-weight: 600;
+	font-size: 80%;
+	width: 30%;
+
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+}
+
+#plan-my-date span {
+	line-height: 40px;
+}
+
+#plan-my-date:hover {
+	cursor: pointer;
+	background-color: #A80000;
+}
+
+input[type=text] {
+	border: 0;
+	border-bottom: 1px solid #DDD;
+	width: 500px;
+}
+
+.col-search {
+	overflow: hidden;
+	margin-right: 10px;
+}
+
+.line {
+	border-top: 1px solid #BBB;
+	border-bottom: 1px solid #BBB;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	text-align: center;
+	font-weight: 400;
 }
