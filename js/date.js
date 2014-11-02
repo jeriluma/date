@@ -23,44 +23,9 @@ $(function(){
         $(this).toggleClass("col-eat-highlight");
     });
 
+    checkWindow();
     $(window).resize(function() {
-        if (window.matchMedia('(min-width: 768px)').matches) {
-            $(".col-time").mouseover(function() {
-                 $(this).find("div").show();
-            });
-
-            $(".col-time").mouseout(function() {
-                 $(this).find("div").hide();
-            });
-
-            $(".col-event").mouseover(function() {
-                $(this).find("div").show();
-            });
-
-            $(".col-event").mouseout(function() {
-                $(this).find("div").hide();
-            });
-
-            $(".col-eat").mouseover(function() {
-                 $(this).find("div").show();
-            });
-
-            $(".col-eat").mouseout(function() {
-                 $(this).find("div").hide();
-            });
-        } else {
-            $(".col-time").mouseover(function() {
-                 $(this).find("div").hide();
-            });
-
-            $(".col-event").mouseover(function() {
-                $(this).find("div").hide();
-            });
-
-            $(".col-eat").mouseover(function() {
-                 $(this).find("div").hide();
-            });
-        }
+        checkWindow();
     });
 
     // searches when typing
@@ -73,6 +38,46 @@ $(function(){
 		return false; // keeps on same page
 	});
 });
+
+function checkWindow() {
+    if (window.matchMedia('(min-width: 768px)').matches) {
+        $(".col-time").mouseover(function() {
+             $(this).find("div").show();
+        });
+
+        $(".col-time").mouseout(function() {
+             $(this).find("div").hide();
+        });
+
+        $(".col-event").mouseover(function() {
+            $(this).find("div").show();
+        });
+
+        $(".col-event").mouseout(function() {
+            $(this).find("div").hide();
+        });
+
+        $(".col-eat").mouseover(function() {
+             $(this).find("div").show();
+        });
+
+        $(".col-eat").mouseout(function() {
+             $(this).find("div").hide();
+        });
+    } else {
+        $(".col-time").mouseover(function() {
+             $(this).find("div").hide();
+        });
+
+        $(".col-event").mouseover(function() {
+            $(this).find("div").hide();
+        });
+
+        $(".col-eat").mouseover(function() {
+             $(this).find("div").hide();
+        });
+    }
+}
 
 function calendar() {
     var currentView = new Date();

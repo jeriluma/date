@@ -73,7 +73,11 @@ h1 label {
 	background-color: #EEE;
 	padding: 50px;
 	margin-top: 50px;
-	width: 100%;
+}
+
+#footer .row {
+	width: 80%;
+	margin: 0 auto;
 }
 
 #footer img {
@@ -84,6 +88,7 @@ h1 label {
 	font-weight: 300;
 	font-size: 80%;
 	text-align: center;
+	color: #666;
 }
 
 h2 {
@@ -108,22 +113,12 @@ h4 {
 	text-transform: uppercase;
 }
 
-#plan-button {
-	display: block;
-	margin-top: 5px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 12pt;
-	font-weight: 300;
-	line-height: 1.5;
-}
-
 .col-day-width {
 	-moz-box-sizing: border-box;
     box-sizing: border-box;
 	float: left;
 	width: 14.28%;
 }
-
 .col-day, .col-week {
 	margin-top: 10px;
 	margin-right: 10px;
@@ -175,7 +170,7 @@ h4 {
     box-sizing: border-box;
 	text-align: center;
 	height: 150px;
-	margin-top: 10px;
+	margin-top: 15px;
 	margin-right: 10px;
 	border: 1px solid #BBB;
 }
@@ -184,8 +179,9 @@ h4 {
 .col-location div, .col-location h3,
 .col-event div, .col-event h3,
 .col-eat div, .col-eat h3 {
+	padding: 5px;
 	position: relative;
-	top: 30%;
+	top: 45%;
 	transform: translateY(-50%);
 }
 
@@ -239,6 +235,11 @@ h4 {
 	font-weight: 600;
 	font-size: 80%;
 	width: 33.32%;
+
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
 }
 
 #plan-my-date span {
@@ -271,9 +272,13 @@ input[type=text] {
 	font-weight: 400;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 	body {
 		font-size: 11pt;
+	}
+
+	#header {
+		padding: 15px;
 	}
 
 	#title {
@@ -283,6 +288,11 @@ input[type=text] {
 
 	#subtitle {
 		font-size: 120%;
+	}
+
+	h1 label {
+		font-size: 120%;
+		font-weight: 300;
 	}
 
 	.col-day {
@@ -297,7 +307,7 @@ input[type=text] {
 	}
 
 	#plan-my-date {
-		width: 100%;
+		width: 70%;
 	}
 
 	#footer .col-3{
