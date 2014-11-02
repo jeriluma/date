@@ -49,23 +49,23 @@ h1 label {
 #header {
 	background-color: #A80000;
 	padding: 50px;
-	display: inline-block;
-	width: 100%;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
 }
 
-#title {
+#title, #subtitle {
 	text-transform: uppercase;
 	font-weight: 100;
 	text-align: center;
 	font-size: 400%;
 	color: #FFF;
-	margin: 0;
 }
 
-#title span {
-	display: block;
+#subtitle {
 	font-weight: 100;
-	font-size: 50%;
+	font-size: 200%;
 	text-transform: none;
 }
 
@@ -100,7 +100,6 @@ h3 {
 
 .col-location h3 {
 	text-transform: uppercase;
-
 }
 
 h4 {
@@ -175,13 +174,11 @@ h4 {
 	-moz-box-sizing: border-box;
     box-sizing: border-box;
 	text-align: center;
-	height: 100px;
+	height: 150px;
 	margin-top: 10px;
 	margin-right: 10px;
 	border: 1px solid #BBB;
 }
-
-
 
 .col-time div, .col-time h3, 
 .col-location div, .col-location h3,
@@ -242,11 +239,6 @@ h4 {
 	font-weight: 600;
 	font-size: 80%;
 	width: 33.32%;
-
-	-o-transition:.5s;
-	-ms-transition:.5s;
-	-moz-transition:.5s;
-	-webkit-transition:.5s;
 }
 
 #plan-my-date span {
@@ -261,7 +253,7 @@ h4 {
 input[type=text] {
 	border: 0;
 	border-bottom: 1px solid #DDD;
-	width: 500px;
+	width: 800px;
 	font-style: 100%;
 }
 
@@ -277,4 +269,42 @@ input[type=text] {
 	margin-bottom: 100px;
 	text-align: center;
 	font-weight: 400;
+}
+
+@media (max-width: 768px) {
+	body {
+		font-size: 11pt;
+	}
+
+	#title {
+		font-size: 190%;
+		font-weight: 300;
+	}
+
+	#subtitle {
+		font-size: 120%;
+	}
+
+	.col-day {
+		height: 50px;
+		font-size: 100%;
+		margin-top: 5px;
+		margin-right: 5px;
+	}
+
+	.col-time, .col-location, .col-event, .col-eat {
+		height: 100px;
+	}
+
+	#plan-my-date {
+		width: 100%;
+	}
+
+	#footer .col-3{
+		text-align: left;
+	}
+
+	#footer div {
+		margin-top: 10px;
+	}
 }

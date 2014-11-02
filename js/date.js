@@ -13,38 +13,54 @@ $(function(){
         $(this).toggleClass("col-time-highlight");
     });
 
-    $(".col-time").mouseover(function() {
-         $(this).find("div").show();
-    });
-
-    $(".col-time").mouseout(function() {
-         $(this).find("div").hide();
-    });
-
     calendar();
 
     $(".col-event").click(function() {
         $(this).toggleClass("col-eat-highlight");
     });
 
-    $(".col-event").mouseover(function() {
-         $(this).find("div").show();
-    });
-
-    $(".col-event").mouseout(function() {
-         $(this).find("div").hide();
-    });
-
     $(".col-eat").click(function() {
         $(this).toggleClass("col-eat-highlight");
     });
 
-    $(".col-eat").mouseover(function() {
-         $(this).find("div").show();
-    });
+    $(window).resize(function() {
+        if (window.matchMedia('(min-width: 768px)').matches) {
+            $(".col-time").mouseover(function() {
+                 $(this).find("div").show();
+            });
 
-    $(".col-eat").mouseout(function() {
-         $(this).find("div").hide();
+            $(".col-time").mouseout(function() {
+                 $(this).find("div").hide();
+            });
+
+            $(".col-event").mouseover(function() {
+                $(this).find("div").show();
+            });
+
+            $(".col-event").mouseout(function() {
+                $(this).find("div").hide();
+            });
+
+            $(".col-eat").mouseover(function() {
+                 $(this).find("div").show();
+            });
+
+            $(".col-eat").mouseout(function() {
+                 $(this).find("div").hide();
+            });
+        } else {
+            $(".col-time").mouseover(function() {
+                 $(this).find("div").hide();
+            });
+
+            $(".col-event").mouseover(function() {
+                $(this).find("div").hide();
+            });
+
+            $(".col-eat").mouseover(function() {
+                 $(this).find("div").hide();
+            });
+        }
     });
 
     // searches when typing

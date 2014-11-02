@@ -11,9 +11,9 @@
 	width: 80%;
 	margin: 0 auto;
 	clear: both;
-	overflow: auto;
 	padding-left: 5px;
 	padding-right: 5px;
+	overflow: none;
 }
 
 .row {
@@ -26,6 +26,12 @@
 .col-7, .col-8, .col-9, .col-10, .col-11 {
 	float: left;
 	padding-right: 5px;
+	overflow: none;
+
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
 }
 
 .col-1 {
@@ -70,4 +76,22 @@
 
 .col-11 {
 	width: 91.63%;
+}
+
+@media (max-width: 768px) {
+	.container {
+		width: 100%;
+	}
+	
+	.col-4 {
+		width: 100%;
+	}
+
+	.col-3 {
+		width: 49.98%;
+	}
+
+	.col-6 {
+		width: 100%;
+	}
 }

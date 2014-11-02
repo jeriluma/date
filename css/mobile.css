@@ -1,0 +1,24 @@
+@media (max-width: 768px) {
+	.col-4 {
+		width: 100%;
+	}
+
+	.col-3 {
+		width: 49.98%;
+	}
+
+	.col-location h3 {
+		font-size: 80%;
+	}
+
+	.col-day {
+		height: 30px;
+		font-size: 80%;
+		margin-top: 5px;
+		margin-right: 5px;
+	}
+
+	#title {
+		font-size: 10%;
+	}
+}
