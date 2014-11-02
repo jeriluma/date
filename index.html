@@ -21,30 +21,82 @@
 		<div>	
 			<div class="row">
 				<div class="col-4">
-					<h1><label for="location">Location</label></h1>
 					<div class="col-search">
-						<input type="text" name="location" placeholder="Seattle, New York" autofocus>
-					</div>
-					
-				</div>
-				<div class="col-4">
-					<h1><label for="event">Event</label></h1>
-					<div class="col-search">
-						<input type="text" name="event" placeholder="jazz, Coldplay, The Filmore" >
+						<h1><label for="location">Location</label></h1>
+						<div>
+							<input type="text" name="location" placeholder="Seattle, 85 Pike St. Seattle, WA 98101" autofocus>
+						</div>
 					</div>
 				</div>
 				<div class="col-4">
-					<h1><label for="eat">Eat</label></h1>
 					<div class="col-search">
-						<input type="text" name="eat" placeholder="Italian, ice cream, beer" >
+						<h1><label for="day">Day</label></h1>
+						<div class="mini-calendar">
+							<h3 id="calendar-month"></h3>
+							<div class="mini-calendar-day"></div>
+							<div id="calendar-month-navigation">
+								<button id="calendar-month-before">^^</button>
+								<button id="calendar-month-after">vv</button>
+							</div>
+							<div class="row">
+								<div class=" col-day-width">
+									<div class="col-week">Sun</div>
+								</div>
+								<div class=" col-day-width">
+									<div class="col-week">Mon</div>
+								</div>
+								<div class=" col-day-width">
+									<div class="col-week">Tue</div>
+								</div>
+								<div class=" col-day-width">
+									<div class="col-week">Wed</div>
+								</div>
+								<div class=" col-day-width">
+									<div class="col-week">Thu</div>
+								</div>
+								<div class=" col-day-width">
+									<div class="col-week">Fri</div>
+								</div>
+								<div class=" col-day-width">
+									<div class="col-week">Sat</div>
+								</div>
+							</div>
+							<div class="day-container row"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="col-search">
+						<h1><label for="time">Time</label></h1>
+						<div>
+							<input type="text" name="location" placeholder="Seattle, New York" autofocus>
+						</div>
 					</div>
 				</div>
 			</div>
+			<div class="row">
+					<div class="col-6">
+						<div class="col-search">
+							<h1><label for="event">Event</label></h1>
+							<div>
+								<input type="text" name="event" placeholder="movies, jazz, Coldplay, The Filmore" >
+							</div>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="col-search">
+							<h1><label for="eat">Eat</label></h1>
+							<div>
+								<input type="text" name="eat" placeholder="Italian, ice cream, beer" >
+							</div>
+						</div>
+					</div>
+				</div>
 			<div id="plan-my-date"><span>Plan My Date</span></div>
 			<div id="date-container"></div>
 		</div>
 
-		<div class="line">OR</div>
+		<div class="line">Can't Decide? Try the Form Below</div>
 
 		<h1>Select a City</h1>
 		<div class="row">

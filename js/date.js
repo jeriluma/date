@@ -171,8 +171,8 @@ function populateCalendar(d) {
 
     $(".col-day").click(function() {
         $(this).toggleClass("col-day-highlight");
-        console.log(d.getMonth() + 1 
-            + $(this).find("span").html() 
+        $(".mini-calendar-day").html((d.getMonth() + 1) + "." 
+            + $(this).find("span").html() + "."
             + d.getUTCFullYear());
     });
 }
