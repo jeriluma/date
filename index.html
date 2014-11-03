@@ -10,7 +10,8 @@
 
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
-    <script src="js/date.js" type="text/javascript"></script>
+    <script src="js/populateForm.js" type="text/javascript"></script>
+    <script src="js/getDates.js" type="text/javascript"></script>
 </head>
 <body>
 	<div id="header">
@@ -31,38 +32,38 @@
 				<div class="col-4">
 					<div class="col-search">
 						<h1><label for="day">Day</label></h1>
-						<div class="mini-calendar">
-							<h3 id="calendar-month"></h3>
-							<div class="mini-calendar-day"></div>
-							<div id="calendar-month-navigation">
-								<button id="calendar-month-before">^^</button>
-								<button id="calendar-month-after">vv</button>
-							</div>
-							<div class="row">
-								<div class=" col-day-width">
-									<div class="col-week">Sun</div>
-								</div>
-								<div class=" col-day-width">
-									<div class="col-week">Mon</div>
-								</div>
-								<div class=" col-day-width">
-									<div class="col-week">Tue</div>
-								</div>
-								<div class=" col-day-width">
-									<div class="col-week">Wed</div>
-								</div>
-								<div class=" col-day-width">
-									<div class="col-week">Thu</div>
-								</div>
-								<div class=" col-day-width">
-									<div class="col-week">Fri</div>
-								</div>
-								<div class=" col-day-width">
-									<div class="col-week">Sat</div>
-								</div>
-							</div>
-							<div class="day-container row"></div>
+						<div class="mini-calendar-day"></div>
+						<div class="mini-calendar-small">
+						<h3 id="calendar-month"></h3>
+						<div id="calendar-month-navigation">
+							<button id="calendar-month-before">^^</button>
+							<button id="calendar-month-after">vv</button>
 						</div>
+						<div class="row  col-week-row">
+							<div class=" col-day-width">
+								<div class="col-week">Sun</div>
+							</div>
+							<div class=" col-day-width">
+								<div class="col-week">Mon</div>
+							</div>
+							<div class=" col-day-width">
+								<div class="col-week">Tue</div>
+							</div>
+							<div class=" col-day-width">
+								<div class="col-week">Wed</div>
+							</div>
+							<div class=" col-day-width">
+								<div class="col-week">Thu</div>
+							</div>
+							<div class=" col-day-width">
+								<div class="col-week">Fri</div>
+							</div>
+							<div class=" col-day-width">
+								<div class="col-week">Sat</div>
+							</div>
+						</div>
+						<div class="day-container row"></div>
+					</div>
 					</div>
 				</div>
 				<div class="col-4">
@@ -73,6 +74,40 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="row">
+				<div class="mini-calendar-big">
+					<h3 id="calendar-month"></h3>
+					<div id="calendar-month-navigation">
+						<button id="calendar-month-before">^^</button>
+						<button id="calendar-month-after">vv</button>
+					</div>
+					<div class="row  col-week-row">
+						<div class=" col-day-width">
+							<div class="col-week">Sun</div>
+						</div>
+						<div class=" col-day-width">
+							<div class="col-week">Mon</div>
+						</div>
+						<div class=" col-day-width">
+							<div class="col-week">Tue</div>
+						</div>
+						<div class=" col-day-width">
+							<div class="col-week">Wed</div>
+						</div>
+						<div class=" col-day-width">
+							<div class="col-week">Thu</div>
+						</div>
+						<div class=" col-day-width">
+							<div class="col-week">Fri</div>
+						</div>
+						<div class=" col-day-width">
+							<div class="col-week">Sat</div>
+						</div>
+					</div>
+					<div class="day-container row"></div>
+				</div>
+			</div>
 			</div>
 			<div class="row">
 					<div class="col-6">
@@ -149,7 +184,7 @@
 			</div>
 		</div>
 		
-		<h1>Select Dates</h1>
+		<h1>Select a Day</h1>
 		<div id="calendar">
 			<h3 id="calendar-month"></h3>
 			<div id="calendar-month-navigation">

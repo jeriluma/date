@@ -1,10 +1,27 @@
 // document ready function
 $(function(){
-	$(".template").hide();
+    hideTemplateDesc();
+    calendar();
+    highlight();
+    checkWindow();
+    $(window).resize(function() {
+        checkWindow();
+    });
+});
+
+
+// hides template and hover over descriptions
+function hideTemplateDesc() {
+    $(".template").hide();
     $(".col-time div").hide();
     $(".col-event div").hide();
     $(".col-eat div").hide();
+    $(".mini-calendar-small").hide();
+    $(".mini-calendar-big").hide();
+}
 
+// Handles the highlighting of elements in times, events, and eats
+function highlight() {
     $(".col-location").click(function() {
         $(this).toggleClass("col-location-highlight");
     });
@@ -13,8 +30,6 @@ $(function(){
         $(this).toggleClass("col-time-highlight");
     });
 
-    calendar();
-
     $(".col-event").click(function() {
         $(this).toggleClass("col-eat-highlight");
     });
@@ -22,23 +37,9 @@ $(function(){
     $(".col-eat").click(function() {
         $(this).toggleClass("col-eat-highlight");
     });
+}
 
-    checkWindow();
-    $(window).resize(function() {
-        checkWindow();
-    });
-
-    // searches when typing
-    // $("input[type=search]").keyup(function() {
-    //  getEventsEats();
-    // });
-
-	$("#plan-my-date").submit(function() {
-		getEventsEats();
-		return false; // keeps on same page
-	});
-});
-
+// Handles the descriptions in times, events and eats
 function checkWindow() {
     if (window.matchMedia('(min-width: 768px)').matches) {
         $(".col-time").mouseover(function() {
@@ -64,6 +65,18 @@ function checkWindow() {
         $(".col-eat").mouseout(function() {
              $(this).find("div").hide();
         });
+
+        if($(".mini-calendar-small").is(":visible")) {
+            $(".mini-calendar-big").show();
+            $(".mini-calendar-small").hide(); 
+        }
+
+        $(".mini-calendar-day").click(function() {
+            $(".mini-calendar-big").toggle();
+            $(".mini-calendar-small").hide();
+        });
+
+
     } else {
         $(".col-time").mouseover(function() {
              $(this).find("div").hide();
@@ -75,6 +88,16 @@ function checkWindow() {
 
         $(".col-eat").mouseover(function() {
              $(this).find("div").hide();
+        });
+
+        if($(".mini-calendar-big").is(":visible")) {
+            $(".mini-calendar-big").hide();
+            $(".mini-calendar-small").show(); 
+        }
+
+        $(".mini-calendar-day").click(function() {
+            $(".mini-calendar-big").hide();
+            $(".mini-calendar-small").toggle();
         });
     }
 }
@@ -104,6 +127,12 @@ function calendar() {
         }
         populateCalendar(currentView);  
     });
+
+    $(".mini-calendar-day").html(
+        (currentView.getMonth() + 1) + "." +
+        currentView.getDate() + "." +
+        currentView.getUTCFullYear()
+    );
 }
 
 function populateCalendar(d) {
@@ -152,8 +181,6 @@ function populateCalendar(d) {
         templateClone = template.clone();
         templateClone.html("");
         templateClone.removeClass("col-day-template");
-        // templateClone.removeClass("col-day");
-        // templateClone.addClass("col-day-width");
         templateClone.addClass("col-day-empty");
         templateClone.show();
         container.append(templateClone);
@@ -170,7 +197,8 @@ function populateCalendar(d) {
     }
 
     $(".col-day").click(function() {
-        $(this).toggleClass("col-day-highlight");
+        $(".col-day").removeClass("col-day-highlight");
+        $(this).addClass("col-day-highlight");
         $(".mini-calendar-day").html((d.getMonth() + 1) + "." 
             + $(this).find("span").html() + "."
             + d.getUTCFullYear());
@@ -186,56 +214,3 @@ function today(d, i) {
         return true;
     return false;
 }
-
-function getEventsEats() {
-	var dateLocation = $("input[name=location]").val();
-	var dateEvent = $("input[name=event]").val();
-	var dateEat = $("input[name=eat]").val();
-
-	// alert(dateLocation + ", " + dateEvent + ", " +dateEat);
-
-    // clean up / validate input data
-
-    // $(".loader").show();
-
-	// getEvents();
-	getEats();
-}
-
-function getEvents(dateLocation) {
-	$.ajax({
-        type: "post",
-        url: "http://api.eventful.com/json/events/search",
-        data: {
-        	app_key: "K7b4cBjVXBTFm2wW",
-        	location: "seattle"
-        },
-        contentType: "application/json; charset=utf-8",
-        dataType: "jsonp",
-        success: function (data) {
-        	// $(".loader").hide();
-        	// alert("success");
-        	formatEvents();
-        },
-        error: function (xhr, status, error) {
-            // $(".loader").hide();
-            // alert("error");
-        }
-    });
-}
-
-function getEats() {
-    $.ajax({
-        type: "post",
-        url: "js/googleplaces.php",
-        success: function (data) {
-            $("#date-container").html(JSON.stringify(data['results']));
-        },
-        error: function (xhr, status, error) {
-            // $(".loader").hide();
-            // alert("error");
-        }
-    });
-}
-
-
