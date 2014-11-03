@@ -230,7 +230,7 @@ h4 {
 	font-size: 100%;
 }
 
-#plan-my-date {
+.plan-my-date {
 	margin: 0 auto;
 	text-transform: uppercase;
 	text-align: center;
@@ -249,11 +249,11 @@ h4 {
 	-webkit-transition:.5s;
 }
 
-#plan-my-date span {
+.plan-my-date span {
 	line-height: 40px;
 }
 
-#plan-my-date:hover {
+.plan-my-date:hover {
 	cursor: pointer;
 	background-color: #A80000;
 }

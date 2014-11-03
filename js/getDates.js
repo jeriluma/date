@@ -5,13 +5,19 @@ $(function(){
     //  getEventsEats();
     // });
 
-	$("#plan-my-date").submit(function() {
+	$(".plan-my-date").click(function() {
 		getEventsEats();
-		return false; // keeps on same page
 	});
+
+    $(".results-container").hide();
 });
 
 function getEventsEats() {
+    $("#search").fadeOut(1000);
+    $("#search-form").fadeOut(1000);
+
+    
+
     var dateLocation = $("input[name=location]").val();
     var dateEvent = $("input[name=event]").val();
     var dateEat = $("input[name=eat]").val();
@@ -23,7 +29,7 @@ function getEventsEats() {
     // $(".loader").show();
 
     // getEvents();
-    getEats();
+    // getEats();
 }
 
 function getEvents(dateLocation) {
@@ -39,7 +45,6 @@ function getEvents(dateLocation) {
         success: function (data) {
             // $(".loader").hide();
             // alert("success");
-            formatEvents();
         },
         error: function (xhr, status, error) {
             // $(".loader").hide();

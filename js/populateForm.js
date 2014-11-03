@@ -7,6 +7,7 @@ $(function(){
     $(window).resize(function() {
         checkWindow();
     });
+    
 });
 
 
