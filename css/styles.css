@@ -295,11 +295,11 @@ input[type=text] {
 	padding-bottom: 20px;
 }
 
-.mini-calendar #calendar-month {
+.mini-calendar .calendar-month {
 	text-align: left;
 }
 
-.mini-calendar-day {
+.mini-calendar-day, .time {
 	font-size: 12pt;
 	font-weight: 300;
 	line-height: 1.65;

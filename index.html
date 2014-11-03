@@ -34,74 +34,74 @@
 						<h1><label for="day">Day</label></h1>
 						<div class="mini-calendar-day"></div>
 						<div class="mini-calendar-small">
-						<h3 id="calendar-month"></h3>
-						<div id="calendar-month-navigation">
-							<button id="calendar-month-before">^^</button>
-							<button id="calendar-month-after">vv</button>
+							<h3 class="calendar-month"></h3>
+							<div id="calendar-month-navigation">
+								<button class="calendar-month-before">^^</button>
+								<button class="calendar-month-after">vv</button>
+							</div>
+							<div class="row col-week-container">
+								<div class=" col-week-template col-day-width">
+									<div class="col-week">Sun</div>
+								</div>
+								<div class=" col-week-template col-day-width">
+									<div class="col-week">Mon</div>
+								</div>
+								<div class=" col-week-template col-day-width">
+									<div class="col-week">Tue</div>
+								</div>
+								<div class=" col-week-template col-day-width">
+									<div class="col-week">Wed</div>
+								</div>
+								<div class=" col-week-template col-day-width">
+									<div class="col-week">Thu</div>
+								</div>
+								<div class=" col-week-template col-day-width">
+									<div class="col-week">Fri</div>
+								</div>
+								<div class=" col-week-template col-day-width">
+									<div class="col-week">Sat</div>
+								</div>
+							</div>
+							<div class="day-container row"></div>
 						</div>
-						<div class="row  col-week-row">
-							<div class=" col-day-width">
-								<div class="col-week">Sun</div>
-							</div>
-							<div class=" col-day-width">
-								<div class="col-week">Mon</div>
-							</div>
-							<div class=" col-day-width">
-								<div class="col-week">Tue</div>
-							</div>
-							<div class=" col-day-width">
-								<div class="col-week">Wed</div>
-							</div>
-							<div class=" col-day-width">
-								<div class="col-week">Thu</div>
-							</div>
-							<div class=" col-day-width">
-								<div class="col-week">Fri</div>
-							</div>
-							<div class=" col-day-width">
-								<div class="col-week">Sat</div>
-							</div>
-						</div>
-						<div class="day-container row"></div>
-					</div>
 					</div>
 				</div>
 				<div class="col-4">
 					<div class="col-search">
 						<h1><label for="time">Time</label></h1>
-						<div>
-							<input type="text" name="location" placeholder="Seattle, New York" autofocus>
+						<div class="time">
+							<div>12:00am</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="mini-calendar-big">
-					<h3 id="calendar-month"></h3>
+					<h3 class="calendar-month"></h3>
 					<div id="calendar-month-navigation">
-						<button id="calendar-month-before">^^</button>
-						<button id="calendar-month-after">vv</button>
+						<button class="calendar-month-before">^^</button>
+						<button class="calendar-month-after">vv</button>
 					</div>
-					<div class="row  col-week-row">
-						<div class=" col-day-width">
+					<div class="row col-week-container">
+						<div class=" col-week-template col-day-width">
 							<div class="col-week">Sun</div>
 						</div>
-						<div class=" col-day-width">
+						<div class=" col-week-template col-day-width">
 							<div class="col-week">Mon</div>
 						</div>
-						<div class=" col-day-width">
+						<div class=" col-week-template col-day-width">
 							<div class="col-week">Tue</div>
 						</div>
-						<div class=" col-day-width">
+						<div class=" col-week-template col-day-width">
 							<div class="col-week">Wed</div>
 						</div>
-						<div class=" col-day-width">
+						<div class=" col-week-template col-day-width">
 							<div class="col-week">Thu</div>
 						</div>
-						<div class=" col-day-width">
+						<div class=" col-week-template col-day-width">
 							<div class="col-week">Fri</div>
 						</div>
-						<div class=" col-day-width">
+						<div class=" col-week-template col-day-width">
 							<div class="col-week">Sat</div>
 						</div>
 					</div>
@@ -110,23 +110,23 @@
 			</div>
 			</div>
 			<div class="row">
-					<div class="col-6">
-						<div class="col-search">
-							<h1><label for="event">Event</label></h1>
-							<div>
-								<input type="text" name="event" placeholder="movies, jazz, Coldplay, The Filmore" >
-							</div>
-						</div>
-					</div>
-					<div class="col-6">
-						<div class="col-search">
-							<h1><label for="eat">Eat</label></h1>
-							<div>
-								<input type="text" name="eat" placeholder="Italian, ice cream, beer" >
-							</div>
+				<div class="col-6">
+					<div class="col-search">
+						<h1><label for="event">Event</label></h1>
+						<div>
+							<input type="text" name="event" placeholder="movies, jazz, Coldplay, The Filmore" >
 						</div>
 					</div>
 				</div>
+				<div class="col-6">
+					<div class="col-search">
+						<h1><label for="eat">Eat</label></h1>
+						<div>
+							<input type="text" name="eat" placeholder="Italian, ice cream, beer" >
+						</div>
+					</div>
+				</div>
+			</div>
 			<div id="plan-my-date"><span>Plan My Date</span></div>
 			<div id="date-container"></div>
 		</div>
@@ -186,61 +186,61 @@
 		
 		<h1>Select a Day</h1>
 		<div id="calendar">
-			<h3 id="calendar-month"></h3>
+			<h3 class="calendar-month"></h3>
 			<div id="calendar-month-navigation">
-				<button id="calendar-month-before">^^</button>
-				<button id="calendar-month-after">vv</button>
+				<button class="calendar-month-before">^^</button>
+				<button class="calendar-month-after">vv</button>
 			</div>
-			<div class="row">
-				<div class=" col-day-width">
+			<div class="row col-week-container">
+				<div class=" col-week-template col-day-width">
 					<div class="col-week">Sun</div>
 				</div>
-				<div class=" col-day-width">
+				<div class=" col-week-template col-day-width">
 					<div class="col-week">Mon</div>
 				</div>
-				<div class=" col-day-width">
+				<div class=" col-week-template col-day-width">
 					<div class="col-week">Tue</div>
 				</div>
-				<div class=" col-day-width">
+				<div class=" col-week-template col-day-width">
 					<div class="col-week">Wed</div>
 				</div>
-				<div class=" col-day-width">
+				<div class=" col-week-template col-day-width">
 					<div class="col-week">Thu</div>
 				</div>
-				<div class=" col-day-width">
+				<div class=" col-week-template col-day-width">
 					<div class="col-week">Fri</div>
 				</div>
-				<div class=" col-day-width">
+				<div class=" col-week-template col-day-width">
 					<div class="col-week">Sat</div>
 				</div>
 			</div>
 			<div class="day-container row"></div>
+		</div>
 
-			<h1>Select Times</h1>
-			<div class="row">
-				<div class="col-3">
-					<div class="col-time">
-						<h3>Morning</h3>
-						<div>Let's go out bright and early!</div>
-					</div>
+		<h1>Select Times</h1>
+		<div class="row">
+			<div class="col-3">
+				<div class="col-time">
+					<h3>Morning</h3>
+					<div>Let's go out bright and early!</div>
 				</div>
-				<div class="col-3">
-					<div class="col-time">
-						<h3>Midday</h3>
-						<div>Let's go out for lunch?</div>
-					</div>
+			</div>
+			<div class="col-3">
+				<div class="col-time">
+					<h3>Midday</h3>
+					<div>Let's go out for lunch?</div>
 				</div>
-				<div class="col-3">
-					<div class="col-time">
-						<h3>Afternoon</h3>
-						<div>It's not too late to start something!</div>
-					</div>
+			</div>
+			<div class="col-3">
+				<div class="col-time">
+					<h3>Afternoon</h3>
+					<div>It's not too late to start something!</div>
 				</div>
-				<div class="col-3">
-					<div class="col-time">
-						<h3>Evening</h3>
-						<div>That night life.</div>
-					</div>
+			</div>
+			<div class="col-3">
+				<div class="col-time">
+					<h3>Evening</h3>
+					<div>That night life.</div>
 				</div>
 			</div>
 		</div>
@@ -272,60 +272,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-3">
-				<div class="col-event">
-					<h3>Event Title</h3>
-					<div>Event Description</div>
-				</div>
-			</div>
-			<div class="col-3">
-				<div class="col-event">
-					<h3>Event Title</h3>
-					<div>Event Description</div>
-				</div>
-			</div>
-			<div class="col-3">
-				<div class="col-event">
-					<h3>Event Title</h3>
-					<div>Event Description</div>
-				</div>
-			</div>
-			<div class="col-3">
-				<div class="col-event">
-					<h3>Event Title</h3>
-					<div>Event Description</div>
-				</div>
-			</div>
-		</div>
 
 		<h1>Select Foods</h1>
-		<div class="row">
-			<div class="col-3">
-				<div class="col-eat">
-					<h3>Eats Title</h3>
-					<div>Eats Description</div>
-				</div>
-			</div>
-			<div class="col-3">
-				<div class="col-eat">
-					<h3>Eats Title</h3>
-					<div>Eats Description</div>
-				</div>
-			</div>
-			<div class="col-3">
-				<div class="col-eat">
-					<h3>Eats Title</h3>
-					<div>Eats Description</div>
-				</div>
-			</div>
-			<div class="col-3">
-				<div class="col-eat">
-					<h3>Eats Title</h3>
-					<div>Eats Description</div>
-				</div>
-			</div>
-		</div>
 		<div class="row">
 			<div class="col-3">
 				<div class="col-eat">

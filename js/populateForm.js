@@ -66,14 +66,8 @@ function checkWindow() {
              $(this).find("div").hide();
         });
 
-        if($(".mini-calendar-small").is(":visible")) {
-            $(".mini-calendar-big").show();
-            $(".mini-calendar-small").hide(); 
-        }
-
         $(".mini-calendar-day").click(function() {
             $(".mini-calendar-big").toggle();
-            $(".mini-calendar-small").hide();
         });
 
 
@@ -90,13 +84,7 @@ function checkWindow() {
              $(this).find("div").hide();
         });
 
-        if($(".mini-calendar-big").is(":visible")) {
-            $(".mini-calendar-big").hide();
-            $(".mini-calendar-small").show(); 
-        }
-
         $(".mini-calendar-day").click(function() {
-            $(".mini-calendar-big").hide();
             $(".mini-calendar-small").toggle();
         });
     }
@@ -106,7 +94,7 @@ function calendar() {
     var currentView = new Date();
     populateCalendar(currentView);
 
-    $("#calendar-month-before").click(function() {
+    $(".calendar-month-before").click(function() {
         currentView.setDate(1);
         currentView.setMonth(currentView.getMonth() - 1);
         
@@ -115,9 +103,11 @@ function calendar() {
             currentView.setUTCFullYear(getUTCFullYear() - 1);
         }
         populateCalendar(currentView);  
+
+        console.log("before");
     });
 
-    $("#calendar-month-after").click(function() {
+    $(".calendar-month-after").click(function() {
         currentView.setDate(1);
         currentView.setMonth(currentView.getMonth() + 1);
         
@@ -126,6 +116,8 @@ function calendar() {
             currentView.setUTCFullYear(getUTCFullYear() + 1);
         }
         populateCalendar(currentView);  
+
+        console.log("after");
     });
 
     $(".mini-calendar-day").html(
@@ -169,7 +161,7 @@ function populateCalendar(d) {
         day[1] = 29;
     }
 
-    $("#calendar-month").html(month[d.getMonth()] + 
+    $(".calendar-month").html(month[d.getMonth()] + 
         " " + d.getUTCFullYear());
 
     var container = $(".day-container");
