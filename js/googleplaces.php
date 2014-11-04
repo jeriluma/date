@@ -21,9 +21,7 @@ function url_get_contents ($Url) {
 }
 
 $request_url = "https://maps.googleapis.com/maps/api/place/textsearch/json?";
-// $request_url .= "key=AIzaSyBnabShsSbFKZR8WU68BIB4IfFYP4JoHQ4"; // home server
-// $request_url .= "key=AIzaSyBWoanUfWRf0BPB7anB6wacn4gw3ELVsdY"; // online server
-$request_url .= "key=AIzaSyCifa4DYZtQsdG8bJW--YcdmL2YvMxxJqI"; // school server
+$request_url .= "key=AIzaSyBnabShsSbFKZR8WU68BIB4IfFYP4JoHQ4"; 
 $request_url .= "&query=restaurants+in+Seattle";
 
 $url_contents = url_get_contents($request_url);

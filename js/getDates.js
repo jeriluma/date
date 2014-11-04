@@ -16,6 +16,7 @@ function getEventsEats() {
     $("#search-form").fadeOut(1000);
 
     getEvents();
+    // getEats();
 }
 
 function getEvents(dateLocation) {
@@ -131,7 +132,7 @@ function getEats() {
         type: "post",
         url: "js/googleplaces.php",
         success: function (data) {
-            console.log("places: " + JSON.stringify(data['results']));
+            console.log("places: " + JSON.stringify(data['results')]);
         },
         error: function (xhr, status, error) {
             // $(".loader").hide();
