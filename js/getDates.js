@@ -7,13 +7,21 @@ $(function(){
     // getEventsEats();
     $(".results-container").hide();
     $(".search-title").hide();
+    $(".search-navi").hide();
+    $(".search-options").hide();
 
     // getEventsEats();
+
+    $(".search-options-button").click(function() {
+        $(".search-options").toggle();
+    });
 });
 
 function getEventsEats() {
     $("#search").fadeOut(1000);
     $("#search-form").fadeOut(1000);
+    $(".search-options-button").fadeOut(1000);
+    $(".search-options").fadeOut(1000);
 
     getEvents();
     // getEats();
@@ -70,6 +78,7 @@ function formatEvents(data) {
     }
 
     $(".search-title").fadeIn(1000);
+    $(".search-navi").fadeIn(1000);
     container.fadeIn(1000);
 }
 
@@ -132,7 +141,7 @@ function getEats() {
         type: "post",
         url: "js/googleplaces.php",
         success: function (data) {
-            console.log("places: " + JSON.stringify(data['results')]);
+            // console.log("places: " + JSON.stringify(data['results')]);
         },
         error: function (xhr, status, error) {
             // $(".loader").hide();
