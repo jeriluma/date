@@ -8,7 +8,7 @@ $(function(){
     $(".results-container").hide();
     $(".search-title").hide();
 
-    getEventsEats();
+    // getEventsEats();
 });
 
 function getEventsEats() {
