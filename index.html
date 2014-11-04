@@ -38,7 +38,7 @@
 			<div class="row">
 				<div class="col-4">
 					<div class="col-search">
-						<h1><label for="location">Location</label></h1>
+						<h1>Location</h1>
 						<div>
 							<input type="text" name="location" placeholder="Seattle, 85 Pike St. Seattle, WA 98101" autofocus>
 						</div>
@@ -46,7 +46,7 @@
 				</div>
 				<div class="col-4">
 					<div class="col-search">
-						<h1><label for="day">Day</label></h1>
+						<h1>Day</h1>
 						<div class="mini-calendar-day"></div>
 						<div class="mini-calendar-small">
 							<h3 class="calendar-month"></h3>
@@ -83,7 +83,7 @@
 				</div>
 				<div class="col-4">
 					<div class="col-search">
-						<h1><label for="time">Time</label></h1>
+						<h1>Time</h1>
 						<div class="time-small">
 						</div>
 					</div>
@@ -134,7 +134,7 @@
 			<div class="row">
 				<div class="col-6">
 					<div class="col-search">
-						<h1><label for="event">Event</label></h1>
+						<h1>Event</h1>
 						<div>
 							<input type="text" name="event" placeholder="movies, jazz, Coldplay, The Filmore" >
 						</div>
@@ -142,7 +142,7 @@
 				</div>
 				<div class="col-6">
 					<div class="col-search">
-						<h1><label for="eat">Eat</label></h1>
+						<h1>Eat</h1>
 						<div>
 							<input type="text" name="eat" placeholder="Italian, ice cream, beer" >
 						</div>
@@ -325,6 +325,10 @@
 		</div>
 	</div>
 	<div class="container">
+		<div class="row search-title">
+			<div class="col-6"><h1>Event</h1></div>
+			<div class="col-6"><h1>Eat</h1></div>
+		</div>
 		<div class="results-container"></div>
 	</div>
 	<div id="footer">
@@ -367,15 +371,44 @@
 	</div>
 
 	<!-- Results Template -->
-	<div class="template results-template row result">
+	<div class="template results-template row results-row">
 		<div class="col-6">
-			<h5 class="result-title"></h5>
-			<div class="result-event-description"></div>
+			<h2 class="result-event-title">
+				<a href="" class="result-event-reservation"></a>
+			</h2>
+			<div class="result-event-content">
+				<p class="result-event-venue"></p>
+				<p class="result-event-address"></p>
+				<p class="result-event-description"></p>
+				<p class="result-event-day"></p>
+				<p class="result-event-time"></p>
+			</div>
 		</div>
 		<div class="col-6">
-			<h5 class="result-title"></h5>
-			<div class="result-eats-description"></div>
+			<h2 class="result-eats-title"></h2>
+			<div class="result-eats-content">
+				<p class="result-eats-description"></p>
+				<p><a href="" class="result-eats-reservation"></a></p>
+			</div>
 		</div>
 	</div>
 </body>
 </html>
+
+<!-- 
+Eventful Categories
+music
+comedy
+family_fun_kids
+festivals_parades
+movies_film
+art
+holiday
+museums & attractions
+schools_alumni
+clubs
+outdoor_crecreation
+performing arts
+sports
+
+ -->

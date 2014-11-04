@@ -79,6 +79,12 @@
 	width: 91.63%;
 }
 
+@media only screen and (min-width: 768px) {
+	.container {
+		width: 1280px;
+	}
+}
+
 @media only screen and (max-width: 768px) {
 	.container {
 		width: 100%;

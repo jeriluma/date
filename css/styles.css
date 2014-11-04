@@ -36,14 +36,8 @@ h1 {
 	margin-bottom: 10px;
 } 
 
-h1 label {
-	display: block;
-	text-transform: uppercase;
-	font-weight: 400;
+.col-search h1, .search-title h1 {
 	text-align: left;
-	font-size: 140%;
-	margin-top: 50px;
-	margin-bottom: 10px;
 }
 
 #header {
@@ -93,7 +87,7 @@ h1 label {
 
 h2 {
 	font-weight: 400;
-	font-size: 110%;
+	font-size: 120%;
 }
 
 h3 {
@@ -307,6 +301,13 @@ input[type=text] {
 	cursor: pointer;
 }
 
+.results-row {
+	border-bottom: 1px solid #EEE;
+	margin-bottom: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
 @media only screen and (min-width: 768px) {
 	.mini-calendar .col-day {
 		height: 30px;
@@ -334,11 +335,6 @@ input[type=text] {
 
 	#subtitle {
 		font-size: 120%;
-	}
-
-	h1 label {
-		font-size: 120%;
-		font-weight: 300;
 	}
 
 	.col-day {
