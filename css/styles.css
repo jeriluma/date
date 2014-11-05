@@ -139,6 +139,9 @@ h4 {
 	height: 70px;
 	font-size: 120%;
 	font-weight: 300;
+
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .mini-calendar .col-day, .mini-calendar .col-week {
@@ -163,7 +166,7 @@ h4 {
 
 .col-day:hover {
 	color: #C84648;
-	border: 1px solid #C84648;
+	border: 2px solid #C84648;
 	cursor: pointer;
 }
 
@@ -179,18 +182,19 @@ h4 {
 }
 
 .col-day-highlight, .col-day-highlight:hover {
-	border: 1px solid #C84648;
+	border: 2px solid #C84648;
 	color: #C84648;
 }
 
 .col-time, .col-location, .col-event, .col-eat {
 	-moz-box-sizing: border-box;
     box-sizing: border-box;
+    
 	text-align: center;
 	height: 150px;
 	margin-top: 15px;
 	margin-right: 10px;
-	border: 1px solid #BBB;
+	border: 1px solid #D3C8B4;
 }
 
 .col-time div, .col-time h3, 
@@ -207,7 +211,7 @@ h4 {
 .col-location:hover, 
 .col-event:hover,
 .col-eat:hover {
-	border: 1px solid #C84648;
+	border: 2px solid #C84648;
 	cursor: pointer;
 }
 
@@ -222,8 +226,8 @@ h4 {
 .col-location-highlight, .col-location-highlight:hover,
 .col-event-highlight, .col-event-highlight:hover,
 .col-eat-highlight, .col-eat-highlight:hover {
-	border: 1px solid #C84648;
-	color: #C84648;
+	border: 2px solid #C84648;
+	/*color: #C84648;*/
 }
 
 .col-time-highlight h3, .col-time-highlight:hover h3,
