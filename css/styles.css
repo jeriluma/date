@@ -40,33 +40,47 @@ h1 {
 	text-align: left;
 }
 
-#header {
-	background-color: #333;
-	padding: 50px;
+.transition {
 	-o-transition:.5s;
 	-ms-transition:.5s;
 	-moz-transition:.5s;
 	-webkit-transition:.5s;
 }
 
+#header {
+	background-color: #C84648;
+	padding: 20px;
+	padding-top: 50px;
+	border-bottom: 10px solid #703E3B;
+}
+
 #title, #subtitle {
-	text-transform: uppercase;
-	font-weight: 100;
+	font-weight: 300;
 	text-align: center;
-	font-size: 400%;
+	font-size: 200%;
 	color: #FFF;
+}
+
+#title span {
+	border: 1px solid #FFF;
+	padding: 20px;
+	cursor: pointer;
 }
 
 #subtitle {
 	font-weight: 100;
-	font-size: 200%;
+	font-size: 99%;
 	text-transform: none;
+	margin-top: 20px;
+	text-transform: uppercase;
 }
 
 #footer {
-	background-color: #EEE;
+	background-color: #FFF3DB;
 	padding: 50px;
 	margin-top: 50px;
+	color: #D3C8B4;
+	border-top: 10px solid #D3C8B4;
 }
 
 #footer .row {
@@ -82,7 +96,12 @@ h1 {
 	font-weight: 300;
 	font-size: 80%;
 	text-align: center;
-	color: #666;
+	color: #C84648;
+}
+
+#footer a {
+	color: #C84648;
+	text-decoration: none;
 }
 
 h2 {
@@ -94,7 +113,6 @@ h3 {
 	text-align: center;
 	font-weight: 600;
 	font-size: 100%;
-	color: #A80000;
 }
 
 .col-location h3 {
@@ -144,8 +162,8 @@ h4 {
 }
 
 .col-day:hover {
-	color: #FF4800;
-	border: 1px solid #FF4800;
+	color: #C84648;
+	border: 1px solid #C84648;
 	cursor: pointer;
 }
 
@@ -156,14 +174,13 @@ h4 {
 }
 
 .col-day-today {
-	color: #FF4800;
+	color: #C84648;
 	font-weight: 400;
 }
 
 .col-day-highlight, .col-day-highlight:hover {
-	border: 1px solid #A80000;
-	color: #A80000;
-	font-weight: 400;
+	border: 1px solid #C84648;
+	color: #C84648;
 }
 
 .col-time, .col-location, .col-event, .col-eat {
@@ -190,7 +207,7 @@ h4 {
 .col-location:hover, 
 .col-event:hover,
 .col-eat:hover {
-	border: 1px solid #FF4800;
+	border: 1px solid #C84648;
 	cursor: pointer;
 }
 
@@ -198,21 +215,22 @@ h4 {
 .col-location:hover h3, 
 .col-event:hover h3,
 .col-eat:hover h3 {
-	color: #FF4800;
+	color: #C84648;
 }
 
 .col-time-highlight, .col-time-highlight:hover,
 .col-location-highlight, .col-location-highlight:hover,
 .col-event-highlight, .col-event-highlight:hover,
 .col-eat-highlight, .col-eat-highlight:hover {
-	border: 1px solid #A80000;
+	border: 1px solid #C84648;
+	color: #C84648;
 }
 
 .col-time-highlight h3, .col-time-highlight:hover h3,
 .col-location-highlight h3, .col-time-location:hover h3,
 .col-event-highlight h3, .col-event-highlight:hover h3,
 .col-eat-highlight h3, .col-eat-highlight:hover h3 {
-	color: #A80000;
+	color: #C84648;
 }
 
 .col-time div, .col-event div, .col-eat div {
@@ -230,17 +248,12 @@ h4 {
 	text-align: center;
 	font-weight: bold;
 	margin-top: 50px;
-	background-color: #FF4800;
+	background-color: #C84648;
 	color: #FFF;
 	height: 40px;
 	font-weight: 600;
 	font-size: 80%;
 	width: 33.32%;
-
-	-o-transition:.5s;
-	-ms-transition:.5s;
-	-moz-transition:.5s;
-	-webkit-transition:.5s;
 }
 
 .plan-my-date span {
@@ -249,7 +262,7 @@ h4 {
 
 .plan-my-date:hover {
 	cursor: pointer;
-	background-color: #A80000;
+	background-color: #703E3B;
 }
 
 input[type=text] {

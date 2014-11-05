@@ -8,6 +8,9 @@ $(function(){
         checkWindow();
     });
     
+    $("#title").click(function() {
+        location.reload();
+    });
 });
 
 
