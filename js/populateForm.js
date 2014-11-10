@@ -11,6 +11,20 @@ $(function(){
     $("#title").click(function() {
         location.reload();
     });
+
+    $(".search-options-button-less").hide();
+
+    $(".search-options-button-more").click(function() {
+        $(".search-options-button-more").hide();
+        $(".search-options-button-less").show();
+        $(".search-options").fadeIn(1000);
+    });
+
+    $(".search-options-button-less").click(function() {
+        $(".search-options-button-more").show();
+        $(".search-options-button-less").hide();
+        $(".search-options").hide();
+    });
 });
 
 
@@ -22,6 +36,7 @@ function hideTemplateDesc() {
     $(".col-eat div").hide();
     $(".mini-calendar-small").hide();
     $(".mini-calendar-big").hide();
+    $("#search-form").hide();
 }
 
 // Handles the highlighting of elements in times, events, and eats

@@ -11,10 +11,6 @@ $(function(){
     $(".search-options").hide();
 
     // getEventsEats();
-
-    $(".search-options-button").click(function() {
-        $(".search-options").toggle();
-    });
 });
 
 function getEventsEats() {

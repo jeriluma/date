@@ -6,7 +6,7 @@
     <meta name="author" content="jeriluma">
     <title>Plan My Date</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/JQuery.js"></script>
 
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
@@ -14,163 +14,176 @@
     <script src="js/getDates.js" type="text/javascript"></script>
 </head>
 <body>
-	<div class="container">
-		<div id="header">
+	<div id="header">
+		<div class="container">
 			<div id="title"><span>pmd</span></div>
 			<div id="subtitle">plan my date</div>
 		</div>
 	</div>
-	<div class="container">
-		<div class="search-navi">
-			<div class="row search-title">
-				<div class="col-4">
-					<div class="search-navi-location-time">
-						<h1>Location and Time</h1>
-						<p>Seattle</p>
-						<p>11.4.2014</p>
-						<p>Afternoon, Evening</p>
-					</div>
-				</div>
-				<div class="col-4">
-					<h1>Event</h1>
-					<div class="search-navi-events">Movies</div>
-				</div>
-				<div class="col-4">
-					<h1>Food</h1>
-					<div class="search-navi-eats">Ice Cream</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<form id="search">
-			<div class="row">
-				<div class="col-4">
-					<div class="col-search">
-						<h1>Location</h1>
-						<div>
-							<input type="text" name="location" placeholder="Seattle, 85 Pike St. Seattle, WA 98101" autofocus>
+
+	<div id="search-bars">
+		<div class="container">
+			<div class="search-navi">
+				<div class="row search-title">
+					<div class="col-4">
+						<div class="search-navi-location-time">
+							<h1>Location and Time</h1>
+							<p>Seattle</p>
+							<p>11.4.2014</p>
+							<p>Afternoon, Evening</p>
 						</div>
 					</div>
-				</div>
-				<div class="col-4">
-					<div class="col-search">
+					<div class="col-4">
 						<h1>Event</h1>
-						<div>
-							<input type="text" name="event" placeholder="movies, jazz, Coldplay, The Filmore" >
-						</div>
+						<div class="search-navi-events">Movies</div>
 					</div>
-				</div>
-				<div class="col-4">
-					<div class="col-search">
+					<div class="col-4">
 						<h1>Food</h1>
-						<div>
-							<input type="text" name="eat" placeholder="Italian, ice cream, beer" >
-						</div>
+						<div class="search-navi-eats">Ice Cream</div>
 					</div>
 				</div>
 			</div>
-		</form>
-	</div>
-	<div class="container">
-		<button class="search-options-button">More Options</button>
-		<div class="row search-options">
-			<div class="calendar col-6">
-				<h1>Date</h1>
-				<h3 class="calendar-month"></h3>
-				<div class"calendar-month-navigation">
-					<button class="calendar-month-before">^^</button>
-					<button class="calendar-month-after">vv</button>
-				</div>
-				<div class="row col-week-container">
-					<div class=" col-week-template col-day-width">
-						<div class="col-week">Sun</div>
+		</div>
+		<div class="container">
+			<form id="search">
+				<div class="row">
+					<div class="col-4">
+						<div class="col-search">
+							<h1>Location</h1>
+							<div>
+								<input type="text" name="location" placeholder="Seattle, 85 Pike St. Seattle, WA 98101" autofocus>
+							</div>
+						</div>
 					</div>
-					<div class=" col-week-template col-day-width">
-						<div class="col-week">Mon</div>
+					<div class="col-4">
+						<div class="col-search">
+							<h1>Event</h1>
+							<div>
+								<input type="text" name="event" placeholder="movies, jazz, Coldplay, The Filmore" >
+							</div>
+						</div>
 					</div>
-					<div class=" col-week-template col-day-width">
-						<div class="col-week">Tue</div>
-					</div>
-					<div class=" col-week-template col-day-width">
-						<div class="col-week">Wed</div>
-					</div>
-					<div class=" col-week-template col-day-width">
-						<div class="col-week">Thu</div>
-					</div>
-					<div class=" col-week-template col-day-width">
-						<div class="col-week">Fri</div>
-					</div>
-					<div class=" col-week-template col-day-width">
-						<div class="col-week">Sat</div>
+					<div class="col-4">
+						<div class="col-search">
+							<h1>Food</h1>
+							<div>
+								<input type="text" name="eat" placeholder="Italian, ice cream, beer" >
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="day-container row"></div>
+			</form>
+		</div>
+		<div class="container">
+			<div class="search-options-button">
+				<div class="search-options-button-more">
+					<div>More Options</div>
+					<div><img src="img/arrow-right.jpg"></div>
+				</div> 
+				<div class="search-options-button-less">
+					<div>Less Options</div>
+					<div><img src="img/arrow-down.jpg"></div>
+				</div>
 			</div>
-			<div class="time-big col-6">
-				<div class="row">
-					<h1>Times</h1>
-					<div class="col-6">
-						<div class="col-time">
-							<h3>Morning</h3>
-							<div>Let's go out bright and early!</div>
+			<div class="row search-options">
+				<div class="calendar col-6">
+					<h1>Date</h1>
+					<h3 class="calendar-month"></h3>
+					<div class"calendar-month-navigation">
+						<button class="calendar-month-before">^^</button>
+						<button class="calendar-month-after">vv</button>
+					</div>
+					<div class="row col-week-container">
+						<div class=" col-week-template col-day-width">
+							<div class="col-week">Sun</div>
+						</div>
+						<div class=" col-week-template col-day-width">
+							<div class="col-week">Mon</div>
+						</div>
+						<div class=" col-week-template col-day-width">
+							<div class="col-week">Tue</div>
+						</div>
+						<div class=" col-week-template col-day-width">
+							<div class="col-week">Wed</div>
+						</div>
+						<div class=" col-week-template col-day-width">
+							<div class="col-week">Thu</div>
+						</div>
+						<div class=" col-week-template col-day-width">
+							<div class="col-week">Fri</div>
+						</div>
+						<div class=" col-week-template col-day-width">
+							<div class="col-week">Sat</div>
 						</div>
 					</div>
-					<div class="col-6">
-						<div class="col-time">
-							<h3>Midday</h3>
-							<div>Let's go out for lunch?</div>
-						</div>
-					</div>
+					<div class="day-container row"></div>
 				</div>
-				<div class="row">
-					<div class="col-6">
-						<div class="col-time">
-							<h3>Afternoon</h3>
-							<div>It's not too late to start something!</div>
+				<div class="time-big col-6">
+					<div class="row">
+						<h1>Times</h1>
+						<div class="col-6">
+							<div class="col-time transition">
+								<h3>Morning</h3>
+								<div>Let's go out bright and early!</div>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="col-time transition">
+								<h3>Midday</h3>
+								<div>Let's go out for lunch?</div>
+							</div>
 						</div>
 					</div>
-					<div class="col-6">
-						<div class="col-time">
-							<h3>Evening</h3>
-							<div>That night life.</div>
+					<div class="row">
+						<div class="col-6">
+							<div class="col-time transition">
+								<h3>Afternoon</h3>
+								<div>It's not too late to start something!</div>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="col-time transition">
+								<h3>Evening</h3>
+								<div>That night life.</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<div class="container">
+			<div class="plan-my-date transition"><span>Plan My Date</span></div>
+			<div class="line">Can't Decide? Try the Form Below</div>
+		</div>
 	</div>
-	</div>
+
 	<div class="container">
 		<div id="search-form">
-			<div class="plan-my-date transition"><span>Plan My Date</span></div>
-			<div class="date-container"></div>
-			<div class="line">Can't Decide? Try the Form Below</div>
-
 			<h1>Select a City</h1>
 			<div class="row">
 				<div class="col-3 col-3-location">
-					<div class="col-location col-location-highlight">
+					<div class="col-location col-location-highlight transition">
 						<h3 class="col-location-city">Seattle</h3>
 						<div>WA</div>
 					</div>
 				</div>
 				<div class="col-3 col-3-location">
-					<div class="col-location">
+					<div class="col-location transition">
 						<h3 class="col-location-city">New York</h3>
 						<div>NY</div>
 					</div>
 					
 				</div>
 				<div class="col-3 col-3-location">
-					<div class="col-location">
+					<div class="col-location transition">
 						<h3 class="col-location-city">Los Angeles</h3>
 						<div>CA</div>
 					</div>
 					
 				</div>
 				<div class="col-3 col-3-location">
-					<div class="col-location">
+					<div class="col-location transition">
 						<h3 class="col-location-city">Las Vegas</h3>
 						<div>NV</div>
 					</div>
@@ -179,19 +192,19 @@
 			</div>
 			<div class="row">
 				<div class="col-3 col-3-location">
-					<div class="col-location">
+					<div class="col-location transition">
 						<h3 class="col-location-city">Boston</h3>
 						<div>MA</div>
 					</div>
 				</div>
 				<div class="col-3 col-3-location">
-					<div class="col-location">
+					<div class="col-location transition">
 						<h3 class="col-location-city">Chicago</h3>
 						<div>IL</div>
 					</div>
 				</div>
 				<div class="col-3 col-3-location">
-					<div class="col-location">
+					<div class="col-location transition">
 						<h3 class="col-location-city">Austin</h3>
 						<div>TX</div>
 					</div>				
@@ -234,25 +247,25 @@
 			<h1>Select Times</h1>
 			<div class="row">
 				<div class="col-3">
-					<div class="col-time">
+					<div class="col-time transition">
 						<h3>Morning</h3>
 						<div>Let's go out bright and early!</div>
 					</div>
 				</div>
 				<div class="col-3">
-					<div class="col-time">
+					<div class="col-time transition">
 						<h3>Midday</h3>
 						<div>Let's go out for lunch?</div>
 					</div>
 				</div>
 				<div class="col-3">
-					<div class="col-time">
+					<div class="col-time transition">
 						<h3>Afternoon</h3>
 						<div>It's not too late to start something!</div>
 					</div>
 				</div>
 				<div class="col-3">
-					<div class="col-time">
+					<div class="col-time transition">
 						<h3>Evening</h3>
 						<div>That night life.</div>
 					</div>
@@ -262,25 +275,25 @@
 			<h1>Select Events</h1>
 			<div class="row">
 				<div class="col-3">
-					<div class="col-event">
+					<div class="col-event transition">
 						<h3>Event Title</h3>
 						<div>Event Description</div>
 					</div>
 				</div>
 				<div class="col-3">
-					<div class="col-event">
+					<div class="col-event transition">
 						<h3>Event Title</h3>
 						<div>Event Description</div>
 					</div>
 				</div>
 				<div class="col-3">
-					<div class="col-event">
+					<div class="col-event transition">
 						<h3>Event Title</h3>
 						<div>Event Description</div>
 					</div>
 				</div>
 				<div class="col-3">
-					<div class="col-event">
+					<div class="col-event transition">
 						<h3>Event Title</h3>
 						<div>Event Description</div>
 					</div>
