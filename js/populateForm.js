@@ -41,7 +41,8 @@ $(function(){
     timeIni();
 
     $(".line").click(function() {
-        $("#search-form").show();
+        $("#search-form").fadeIn(1000);
+        $(".line-message").fadeIn(1000);
     });
     
 });
@@ -176,8 +177,6 @@ function calendar() {
             currentView.setUTCFullYear(getUTCFullYear() - 1);
         }
         populateCalendar(currentView);  
-
-        console.log("before");
     });
 
     $(".calendar-month-after").click(function() {
@@ -189,15 +188,11 @@ function calendar() {
             currentView.setUTCFullYear(getUTCFullYear() + 1);
         }
         populateCalendar(currentView);  
-
-        console.log("after");
     });
 
-    $(".mini-calendar-day").html(
-        (currentView.getMonth() + 1) + "." +
-        currentView.getDate() + "." +
-        currentView.getUTCFullYear()
-    );
+    var day = $(".col-day-highlight span").html();
+    var month = $(".calendar-month").html();
+    $(".search-date").html(day + " " + month);
 }
 
 function populateCalendar(d) {
@@ -254,8 +249,11 @@ function populateCalendar(d) {
     for(var i = d.getDate(); i <= day[d.getMonth()]; i++) {
         templateClone = template.clone();
         templateClone.find("span").html(i);
-        if (today(d, i))
+        if (today(d, i)) {
             templateClone.addClass("col-day-today");
+            templateClone.find("div").addClass("col-day-highlight");
+        }
+            
         templateClone.removeClass("col-day-template");
         templateClone.show();
         container.append(templateClone);
@@ -267,6 +265,10 @@ function populateCalendar(d) {
         $(".mini-calendar-day").html((d.getMonth() + 1) + "." 
             + $(this).find("span").html() + "."
             + d.getUTCFullYear());
+
+        var day = $(".col-day-highlight span").html();
+        var month = $(".calendar-month").html();
+        $(".search-date").html(day + " " + month);
     });
 }
 

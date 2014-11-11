@@ -89,11 +89,7 @@
 		padding: 0;
 	}
 	
-	.col-4, .col-5, .col-6, .col-7, .col-8 {
+	.col-3, .col-4, .col-5, .col-6, .col-7, .col-8 {
 		width: 100%;
-	}
-
-	.col-3 {
-		width: 49.98%;
 	}
 }

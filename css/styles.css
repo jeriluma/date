@@ -38,12 +38,17 @@ h1 {
 	font-weight: 400;
 	text-align: center;
 	font-size: 140%;
-	margin-top: 50px;
+	margin-top: 30px;
 	margin-bottom: 10px;
 } 
 
 .col-search h1, .search-title h1 {
 	text-align: left;
+}
+
+.search-title {
+	margin-top: 30px;
+	border-top: 1px solid #DDD;
 }
 
 .transition {
@@ -269,14 +274,14 @@ h4 {
 	text-transform: uppercase;
 	text-align: center;
 	font-weight: bold;
-	margin-top: 50px;
+	margin-top: 60px;
 	background-color: #C84648;
 	color: #FFF;
 	height: 40px;
 	font-weight: 600;
 	font-size: 80%;
-	width: 33.32%;
-	margin-bottom: 20px;
+	/*width: 33.32%;*/
+	/*margin-bottom: 20px;*/
 }
 
 .plan-my-date span {
@@ -306,14 +311,16 @@ h4 {
 	overflow: hidden;
 }
 
-.line {
+.select-form {
+/*.line {*/
 	border-top: 1px solid #BBB;
 	border-bottom: 1px solid #BBB;
 	margin-top: 100px;
-	margin-bottom: 100px;
+	/*margin-bottom: 100px;*/
 	text-align: center;
 	font-weight: 400;
 	cursor: pointer;
+	padding: 5px;
 }
 
 .mini-calendar {
@@ -398,6 +405,10 @@ h4 {
 .time-message {
 	margin-top: 10px;
 	color: #C84648;
+}
+
+.line-message {
+	margin-top: 10px;
 }
 
 @media only screen and (min-width: 768px) {

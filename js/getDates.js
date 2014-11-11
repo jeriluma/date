@@ -4,23 +4,31 @@ $(function(){
 		getEventsEats();
 	});
 
-    // getEventsEats();
     $(".results-container").hide();
     $(".search-title").hide();
-    $(".search-navi").hide();
     $(".search-options").hide();
-
-    // getEventsEats();
+    $(".search-details").hide();
 });
 
 function getEventsEats() {
-    $("#search").fadeOut(1000);
     $("#search-form").fadeOut(1000);
-    $(".search-options-button").fadeOut(1000);
+    $(".select-form").fadeOut(1000);
+
+    $(".search-options-button-more").show();
+    $(".search-options-button-less").hide();
     $(".search-options").fadeOut(1000);
 
+    $('html, body').animate({scrollTop:0}, 'slow');
+
+    getSearchDeatils();
     getEvents();
     // getEats();
+}
+
+function getSearchDeatils() {
+    var day = $(".col-day-highlight span").html();
+    var month = $(".calendar-month").html();
+    $(".search-date").html(day + " " + month);
 }
 
 function getEvents(dateLocation) {

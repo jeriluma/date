@@ -26,45 +26,25 @@
 
 		<div id="search-bars">
 			<div class="container">
-				<div class="search-navi">
-					<div class="row search-title">
-						<div class="col-4">
-							<div class="search-navi-location-time">
-								<h1>Location and Time</h1>
-								<p>Seattle</p>
-								<p>11.4.2014</p>
-								<p>Afternoon, Evening</p>
-							</div>
-						</div>
-						<div class="col-4">
-							<h1>Event</h1>
-							<div class="search-navi-events">Movies</div>
-						</div>
-						<div class="col-4">
-							<h1>Food</h1>
-							<div class="search-navi-eats">Ice Cream</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="container">
 				<form id="search">
 					<div class="row">
-						<div class="col-4">
+						<div class="col-3">
 							<div class="col-search">
 								<h1>Location</h1>
 								<div>
 									<input type="text" name="location" placeholder="85 Pike St. Seattle, WA 98101">
 								</div>
-								<div class="search-date"></div>
-								<div class="search-time">
-									<span class="search-start-time"></span>
-									<span> - </span>
-									<span class="search-end-time"></span>
+								<div class="search-deails">
+									<div class="search-date"></div>
+									<div class="search-time">
+										<span class="search-start-time"></span>
+										<span> - </span>
+										<span class="search-end-time"></span>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-4">
+						<div class="col-3">
 							<div class="col-search">
 								<h1>Food</h1>
 								<div>
@@ -72,13 +52,16 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-4">
+						<div class="col-3">
 							<div class="col-search">
 								<h1>Event</h1>
 								<div>
-									<input type="text" name="event" placeholder="movies, jazz, Coldplay, The Filmore" >
+									<input type="text" name="event" placeholder="movies, Coldplay, The Filmore" >
 								</div>
 							</div>
+						</div>
+						<div class="col-3">
+							<div class="plan-my-date transition"><span>Plan My Date</span></div>
 						</div>
 					</div>
 				</form>
@@ -172,63 +155,65 @@
 					</div>
 				</div>
 			</div>
+		</div>
 
-			<div class="container">
-				<div class="plan-my-date transition"><span>Plan My Date</span></div>
-				<div class="line">Can't Decide?</div>
-			</div>
+		<div class="select-form transition">
+			<h2 class="line">Can't Decide?</h2>
+			<h3 class="line-message template">Use a Form</h3>
 		</div>
 
 		<div class="container">
 			<div id="search-form">
 				<h1>Select a City</h1>
-				<div class="row">
-					<div class="col-3 col-3-location">
-						<div class="col-location col-location-highlight transition">
-							<h3 class="col-location-city">Seattle</h3>
-							<div>WA</div>
+				<div class="cities">
+					<div class="row">
+						<div class="col-3 col-3-location">
+							<div class="col-location col-location-highlight transition">
+								<h3 class="col-location-city">Seattle</h3>
+								<div>WA</div>
+							</div>
+						</div>
+						<div class="col-3 col-3-location">
+							<div class="col-location transition">
+								<h3 class="col-location-city">New York</h3>
+								<div>NY</div>
+							</div>
+							
+						</div>
+						<div class="col-3 col-3-location">
+							<div class="col-location transition">
+								<h3 class="col-location-city">Los Angeles</h3>
+								<div>CA</div>
+							</div>
+							
+						</div>
+						<div class="col-3 col-3-location">
+							<div class="col-location transition">
+								<h3 class="col-location-city">Las Vegas</h3>
+								<div>NV</div>
+							</div>
+							
 						</div>
 					</div>
-					<div class="col-3 col-3-location">
-						<div class="col-location transition">
-							<h3 class="col-location-city">New York</h3>
-							<div>NY</div>
+					<div class="row">
+						<div class="col-3 col-3-location">
+							<div class="col-location transition">
+								<h3 class="col-location-city">Boston</h3>
+								<div>MA</div>
+							</div>
 						</div>
-						
-					</div>
-					<div class="col-3 col-3-location">
-						<div class="col-location transition">
-							<h3 class="col-location-city">Los Angeles</h3>
-							<div>CA</div>
+						<div class="col-3 col-3-location">
+							<div class="col-location transition">
+								<h3 class="col-location-city">Chicago</h3>
+								<div>IL</div>
+							</div>
 						</div>
-						
-					</div>
-					<div class="col-3 col-3-location">
-						<div class="col-location transition">
-							<h3 class="col-location-city">Las Vegas</h3>
-							<div>NV</div>
+						<div class="col-3 col-3-location">
+							<div class="col-location transition">
+								<h3 class="col-location-city">Austin</h3>
+								<div>TX</div>
+							</div>				
 						</div>
-						
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-3 col-3-location">
-						<div class="col-location transition">
-							<h3 class="col-location-city">Boston</h3>
-							<div>MA</div>
-						</div>
-					</div>
-					<div class="col-3 col-3-location">
-						<div class="col-location transition">
-							<h3 class="col-location-city">Chicago</h3>
-							<div>IL</div>
-						</div>
-					</div>
-					<div class="col-3 col-3-location">
-						<div class="col-location transition">
-							<h3 class="col-location-city">Austin</h3>
-							<div>TX</div>
-						</div>				
 					</div>
 				</div>
 				
@@ -236,8 +221,8 @@
 				<div class="calendar">
 					<h3 class="calendar-month"></h3>
 					<div class="calendar-month-navigation">
-						<button class="calendar-month-before">^^</button>
-						<button class="calendar-month-after">vv</button>
+						<span class="calendar-month-before"><img src="img/Arrow-up.jpg"></span>
+						<span class="calendar-month-after"><img src="img/Arrow-down.jpg"></span>
 					</div>
 					<div class="row col-week-container">
 						<div class=" col-week-template col-day-width">
@@ -291,6 +276,34 @@
 							<div>That late night light.</div>
 						</div>
 					</div>
+				</div>				
+
+				<h1>Select Foods</h1>
+				<div class="row">
+					<div class="col-3">
+						<div class="col-eat transition">
+							<h3 class="transition">Eats Title</h3>
+							<div>Eats Description</div>
+						</div>
+					</div>
+					<div class="col-3">
+						<div class="col-eat transition">
+							<h3 class="transition">Eats Title</h3>
+							<div>Eats Description</div>
+						</div>
+					</div>
+					<div class="col-3">
+						<div class="col-eat transition">
+							<h3 class="transition">Eats Title</h3>
+							<div>Eats Description</div>
+						</div>
+					</div>
+					<div class="col-3">
+						<div class="col-eat transition">
+							<h3 class="transition">Eats Title</h3>
+							<div>Eats Description</div>
+						</div>
+					</div>
 				</div>
 
 				<h1>Select Events</h1>
@@ -321,42 +334,14 @@
 					</div>
 				</div>
 
-				<h1>Select Foods</h1>
-				<div class="row">
-					<div class="col-3">
-						<div class="col-eat transition">
-							<h3 class="transition">Eats Title</h3>
-							<div>Eats Description</div>
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="col-eat transition">
-							<h3 class="transition">Eats Title</h3>
-							<div>Eats Description</div>
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="col-eat transition">
-							<h3 class="transition">Eats Title</h3>
-							<div>Eats Description</div>
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="col-eat transition">
-							<h3 class="transition">Eats Title</h3>
-							<div>Eats Description</div>
-						</div>
-					</div>
-				</div>
-
 				<div class="plan-my-date transition"><span>Plan My Date</span></div>
 			</div>
 		</div>
 
 		<div class="container">
 			<div class="row search-title">
-				<div class="col-6"><h1>Event</h1></div>
 				<div class="col-6"><h1>Food</h1></div>
+				<div class="col-6"><h1>Event</h1></div>
 			</div>
 			<div class="results-container"></div>
 		</div>
@@ -399,7 +384,9 @@
 		</div>
 
 		<!-- Week Title Template -->
-		
+		<div class=" template col-week-template col-day-width">
+			<div class="col-week"></div>
+		</div>
 
 		<!-- Day Template -->
 		<div class="template col-day-template col-day-width">
