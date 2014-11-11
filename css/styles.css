@@ -358,8 +358,12 @@ h4 {
 	display: inline-block;
 }
 
-.search-options-button img{
+.search-options-button img, .calendar-month-before img, .calendar-month-after img{
 	width: 15px;
+}
+
+.calendar-month-after img {
+	padding-bottom: 5px;
 }
 
 #search-bars {
