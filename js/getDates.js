@@ -20,15 +20,8 @@ function getEventsEats() {
 
     $('html, body').animate({scrollTop:0}, 'slow');
 
-    getSearchDeatils();
-    getEvents();
-    // getEats();
-}
-
-function getSearchDeatils() {
-    var day = $(".col-day-highlight span").html();
-    var month = $(".calendar-month").html();
-    $(".search-date").html(day + " " + month);
+    // getEvents();
+    getEats();
 }
 
 function getEvents(dateLocation) {
@@ -38,10 +31,12 @@ function getEvents(dateLocation) {
         data: {
             app_key: "K7b4cBjVXBTFm2wW",
             // keywords: "",
-            location: "seattle",
+            location: dateLocation,
             date: "Future",
             // category: "",
-            page_size: "10"
+            page_size: "1"
+            // start_time: "2005-03-01 19:00:00",
+            // end_time: "2005-03-01 19:00:00"
             
         },
         contentType: "application/json; charset=utf-8",
@@ -146,12 +141,17 @@ function getEats() {
         url: "js/googleplaces.php",
         success: function (data) {
             // console.log("places: " + JSON.stringify(data['results')]);
+            console.log(JSON.stringify(data["results"]));
         },
         error: function (xhr, status, error) {
             // $(".loader").hide();
             console.log(error);
         }
     });
+}
+
+function formateats(data) {
+
 }
 
 
