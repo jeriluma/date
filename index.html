@@ -34,14 +34,6 @@
 								<div>
 									<input type="text" name="location" placeholder="85 Pike St. Seattle, WA 98101">
 								</div>
-								<div class="search-deails">
-									<div class="search-date"></div>
-									<div class="search-time">
-										<span class="search-start-time"></span>
-										<span> - </span>
-										<span class="search-end-time"></span>
-									</div>
-								</div>
 							</div>
 						</div>
 						<div class="col-3">
@@ -67,15 +59,26 @@
 				</form>
 			</div>
 			<div class="container">
-				<div class="search-options-button">
-					<div class="search-options-button-more">
-						<div>More Options</div>
-						<div><img src="img/arrow-right.jpg"></div>
-					</div> 
-					<div class="search-options-button-less">
-						<div>Less Options</div>
-						<div><img src="img/arrow-down.jpg"></div>
+				<div class="row">
+					<div class="search-deails">
+						<div class="search-date"></div>
+						<div class="search-time">
+							<span class="search-start-time"></span>
+							<span> - </span>
+							<span class="search-end-time"></span>
+						</div>
 					</div>
+					<div class="search-options-button">
+						<div class="search-options-button-more">
+							<div>More Options</div>
+							<div><img src="img/arrow-right.jpg"></div>
+						</div> 
+						<div class="search-options-button-less">
+							<div>Less Options</div>
+							<div><img src="img/arrow-down.jpg"></div>
+						</div>
+					</div>
+					
 				</div>
 				<div class="row search-options">
 					<div class="calendar col-8">
@@ -396,6 +399,13 @@
 		<!-- Results Template -->
 		<div class="template results-template row results-row">
 			<div class="col-6">
+				<h2 class="result-eats-title"></h2>
+				<div class="result-eats-content">
+					<p class="result-eats-description"></p>
+					<p><a href="" class="result-eats-reservation"></a></p>
+				</div>
+			</div>
+			<div class="col-6">
 				<h2 class="result-event-title">
 					<a href="" class="result-event-reservation"></a>
 				</h2>
@@ -405,13 +415,6 @@
 					<p class="result-event-description"></p>
 					<p class="result-event-day"></p>
 					<p class="result-event-time"></p>
-				</div>
-			</div>
-			<div class="col-6">
-				<h2 class="result-eats-title"></h2>
-				<div class="result-eats-content">
-					<p class="result-eats-description"></p>
-					<p><a href="" class="result-eats-reservation"></a></p>
 				</div>
 			</div>
 		</div>
