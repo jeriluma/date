@@ -48,7 +48,6 @@ h1 {
 
 .search-title {
 	margin-top: 30px;
-	border-top: 1px solid #DDD;
 }
 
 .transition {
@@ -346,7 +345,7 @@ h4 {
 }
 
 .results-row {
-	border-bottom: 1px solid #EEE;
+	border-top: 1px solid #EEE;
 	margin-bottom: 30px;
 	padding-top: 30px;
 	padding-bottom: 30px;

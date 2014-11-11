@@ -24,17 +24,53 @@ function getEventsEats() {
     getEats();
 }
 
-function getEvents(dateLocation) {
+function getEats() {
+    $.ajax({
+        type: "post",
+        url: "js/googleplaces.php",
+        success: function (data) {
+            // console.log("places: " + JSON.stringify(data['results')]);
+            // console.log(JSON.stringify(data["results"]));
+            formatEats(data["results"]);
+        },
+        error: function (xhr, status, error) {
+            // $(".loader").hide();
+            console.log(error);
+        }
+    });
+}
+
+function formatEats(data) {
+    var container = $(".results-container");
+    var template = $(".results-template");
+    var templateClone;
+
+    container.empty();
+
+    for(var i = 0; i < 10; i++) {
+        var result = data[i];
+        templateClone = template.clone();
+
+        templateClone.find(".result-eat-title").html(result["name"]);
+        templateClone.find(".result-eat-address").html(result["formatted_address"]);
+
+        // var location = result["geometry"]["location"]["lat"] + ", " + result["geometry"]["location"]["lng"];
+        var location = result["formatted_address"];
+        getEvents(container, templateClone, location);  
+    }
+}
+
+function getEvents(container, templateClone, location) {
     $.ajax({
         type: "post",
         url: "http://api.eventful.com/json/events/search",
         data: {
             app_key: "K7b4cBjVXBTFm2wW",
             // keywords: "",
-            location: dateLocation,
+            location: location,
             date: "Future",
             // category: "",
-            page_size: "1"
+            page_size: "2"
             // start_time: "2005-03-01 19:00:00",
             // end_time: "2005-03-01 19:00:00"
             
@@ -42,7 +78,7 @@ function getEvents(dateLocation) {
         contentType: "application/json; charset=utf-8",
         dataType: "jsonp",
         success: function (data) {
-            formatEvents(data["events"]["event"]);
+            formatEvents(container, templateClone, data["events"]["event"]);
         },
         error: function (xhr, status, error) {
             console.log(error);
@@ -50,17 +86,10 @@ function getEvents(dateLocation) {
     });
 }
 
-function formatEvents(data) {
-    var container = $(".results-container");
-    var template = $(".results-template");
-    var templateClone;
-
-    container.empty()
-
+function formatEvents(container, templateClone, data) {
     for(var i = 0; i < data.length; i++) {
         var result = data[i];
-        
-        templateClone = template.clone();
+        console.log(result);
         templateClone.find(".result-event-reservation").html(result["title"]);
         templateClone.find(".result-event-reservation").attr('href', result["url"]);
         templateClone.find(".result-event-venue").html(result["venue_name"]);
@@ -80,6 +109,7 @@ function formatEvents(data) {
     $(".search-navi").fadeIn(1000);
     container.fadeIn(1000);
 }
+
 
 function formatAddress(result) {
     var address = "";
@@ -134,24 +164,3 @@ function formatTime (result) {
     }
     return t;
 }
-
-function getEats() {
-    $.ajax({
-        type: "post",
-        url: "js/googleplaces.php",
-        success: function (data) {
-            // console.log("places: " + JSON.stringify(data['results')]);
-            console.log(JSON.stringify(data["results"]));
-        },
-        error: function (xhr, status, error) {
-            // $(".loader").hide();
-            console.log(error);
-        }
-    });
-}
-
-function formateats(data) {
-
-}
-
-
