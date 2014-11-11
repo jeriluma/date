@@ -25,8 +25,52 @@ $(function(){
         $(".search-options-button-less").hide();
         $(".search-options").hide();
     });
+
+    $("input[type=text").focus(function() {
+        input = this;
+        var placeholder = $(this).attr("placeholder");
+        $(this).removeAttr("placeholder");
+
+        $(this).focusout(function() {
+            $(this).attr("placeholder", placeholder);
+        });
+    });
+
+    // formatDay();
+
+    timeIni();
+
+    $(".line").click(function() {
+        $("#search-form").show();
+    });
+    
 });
 
+function timeIni() {
+    // $(".startHour").keydown(function() {
+    //     numbersOnly(this);
+    // });
+
+    $(".startHour").keyup(function() {
+        numbersOnly(this);
+        checkTime(this, "hour");        
+    });
+
+    $(".startMin").keyup(function(){
+        numbersOnly(this);
+        checkTime(this, "minute");         
+    });
+
+    $(".endHour").keyup(function() {
+        numbersOnly(this);
+        checkTime(this, "hour");        
+    });
+
+    $(".endMin").keyup(function(){
+        numbersOnly(this);
+        checkTime(this, "minute");         
+    });
+}
 
 // hides template and hover over descriptions
 function hideTemplateDesc() {
@@ -55,6 +99,16 @@ function highlight() {
 
     $(".col-eat").click(function() {
         $(this).toggleClass("col-eat-highlight");
+    });
+
+    $(".startAMPM").click(function() {
+        $(".startAMPM").removeClass("startAMPM-highlight");
+        $(this).toggleClass("startAMPM-highlight");
+    });
+
+    $(".endAMPM").click(function() {
+        $(".endAMPM").removeClass("endAMPM-highlight");
+        $(this).toggleClass("endAMPM-highlight");
     });
 }
 
@@ -224,4 +278,64 @@ function today(d, i) {
     if (year && month && day)
         return true;
     return false;
+}
+
+function formatDay() {
+    var d = new Date();
+    var hour = d.getHours();
+    hour = hour.parseInt();
+    var t = "";
+    var am = false;
+
+    if (hour < 12) {
+        if(hour == 00)
+            t += "12";    
+        else if(hour < 10)
+            t += hour % 10;
+        else
+            t += hour;
+        am = true;
+    } else {
+        if (hour == 12)
+            t += hour;
+        else
+            t += hour - 12; 
+    }
+ 
+    $(".startHour").val(t);
+}
+
+function checkTime(t, type) {
+    $(".time-message").hide();
+    var time = $(t).val();
+    var isnum = /^\d+$/.test(time);
+    time = parseInt(time);
+
+
+    if(type == "hour") {
+        if (time < 0 || time > 12) {
+            $(".time-message").html("Invalid hour input");
+            $(".time-message").fadeIn(500);
+        } else {
+            $(".time-message").fadeOut(500);
+            $(".time-message").html("");
+        }
+    } else {
+        if (time < 0 || time > 59) {
+            $(".time-message").html("Invalid minute input");
+            $(".time-message").fadeIn(500);
+        } else {
+            $(".time-message").fadeOut(500);
+            $(".time-message").html("");
+        }
+    }
+}
+
+function numbersOnly(t) {
+    var time = $(t).val();
+    var isnum = /^\d+$/.test(time);
+    console.log(isnum);
+    if(isnum == false) {
+        $(t).val("");       
+    }
 }

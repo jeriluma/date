@@ -24,9 +24,7 @@
 
 html, body {
 	height: 100%;
-	margin: 0;
 }
-
 
 body {
 	font-family: 'Roboto', sans-serif;
@@ -57,9 +55,10 @@ h1 {
 
 #header {
 	background-color: #C84648;
-	padding: 20px;
-	padding-top: 50px;
+	padding-top: 20px;
+	padding-bottom: 5px;
 	border-bottom: 10px solid #703E3B;
+	/*position: fixed;*/
 }
 
 #title, #subtitle {
@@ -71,24 +70,26 @@ h1 {
 
 #title span {
 	border: 1px solid #FFF;
-	padding: 20px;
+	padding: 5px 17px 10px 17px;
 	cursor: pointer;
 }
 
 #subtitle {
 	font-weight: 100;
-	font-size: 99%;
+	font-size: 98%;
 	text-transform: none;
-	margin-top: 20px;
+	margin-top: 10px;
 	text-transform: uppercase;
 }
 
 #footer {
 	background-color: #FFF3DB;
-	padding: 50px;
+	padding: 15px;
 	margin-top: 50px;
 	color: #D3C8B4;
 	border-top: 10px solid #D3C8B4;
+	/*position: absolute;*/
+	/*bottom: 0;*/
 }
 
 #footer .row {
@@ -215,6 +216,13 @@ h4 {
 	transform: translateY(-50%);
 }
 
+.startAMPM, .endAMPM {
+	margin-left: 10px;
+	text-align: center;
+	border: 1px solid #D3C8B4;
+	cursor: pointer;
+}
+
 .col-time:hover, 
 .col-location:hover, 
 .col-event:hover,
@@ -233,7 +241,9 @@ h4 {
 .col-time-highlight, .col-time-highlight:hover,
 .col-location-highlight, .col-location-highlight:hover,
 .col-event-highlight, .col-event-highlight:hover,
-.col-eat-highlight, .col-eat-highlight:hover {
+.col-eat-highlight, .col-eat-highlight:hover,
+.startAMPM-highlight, .startAMPM-hightlight:hover, 
+.endAMPM-highlight, .endAMPM-hightlight:hover {
 	border: 2px solid #C84648;
 	/*color: #C84648;*/
 }
@@ -266,6 +276,7 @@ h4 {
 	font-weight: 600;
 	font-size: 80%;
 	width: 33.32%;
+	margin-bottom: 20px;
 }
 
 .plan-my-date span {
@@ -277,7 +288,7 @@ h4 {
 	background-color: #703E3B;
 }
 
-input[type=text] {
+#search-bars input[type=text], input[type=time] {
 	border: 0;
 	border-bottom: 1px solid #DDD;
 	width: 800px;
@@ -298,10 +309,11 @@ input[type=text] {
 .line {
 	border-top: 1px solid #BBB;
 	border-bottom: 1px solid #BBB;
-	/*margin-top: 100px;*/
-	/*margin-bottom: 100px;*/
+	margin-top: 100px;
+	margin-bottom: 100px;
 	text-align: center;
 	font-weight: 400;
+	cursor: pointer;
 }
 
 .mini-calendar {
@@ -351,7 +363,37 @@ input[type=text] {
 }
 
 #search-bars {
-	min-height: 60%;
+	/*min-height: 80%;*/
+	/*padding-top: 75px;*/
+	/*height: 80%;*/
+}
+
+.time-big input[type=text] {
+	text-align: left;
+}
+
+/*.startHour, .startColon, .startMin, .startAMPM {
+	width: 40px;
+	display: inline;
+	float: left;
+}*/
+
+.calendar h2 {
+	text-align: center;
+
+}
+
+.time-big .endTime h2 {
+	margin-top: 20px;
+}
+
+.search-options h1 {
+	margin-top: 5px;
+}
+
+.time-message {
+	margin-top: 10px;
+	color: #C84648;
 }
 
 @media only screen and (min-width: 768px) {
@@ -365,7 +407,7 @@ input[type=text] {
 	/*}*/
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
 	body {
 		font-size: 11pt;
 	}
