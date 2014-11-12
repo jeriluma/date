@@ -20,7 +20,6 @@ function getEventsEats() {
 
     $('html, body').animate({scrollTop:0}, 'slow');
 
-    // getEvents();
     getEats();
 }
 
@@ -54,7 +53,6 @@ function formatEats(data) {
         templateClone.find(".result-eat-title").html(result["name"]);
         templateClone.find(".result-eat-address").html(result["formatted_address"]);
 
-        // var location = result["geometry"]["location"]["lat"] + ", " + result["geometry"]["location"]["lng"];
         var location = result["formatted_address"];
         getEvents(container, templateClone, location);  
     }
