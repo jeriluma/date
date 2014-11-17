@@ -16,12 +16,12 @@ $(function(){
 
     $(".search-options-button-more").click(function() {
         $(".search-options-button-more").hide();
-        $(".search-options-button-less").show();
+        $(".search-options-button-less").fadeIn(1000);
         $(".search-options").fadeIn(1000);
     });
 
     $(".search-options-button-less").click(function() {
-        $(".search-options-button-more").show();
+        $(".search-options-button-more").fadeIn(1000);
         $(".search-options-button-less").hide();
         $(".search-options").hide();
     });
