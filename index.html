@@ -35,6 +35,7 @@
 								<div>
 									<input type="text" name="location" placeholder="85 Pike St. Seattle, WA 98101">
 								</div>
+								<div id="location-suggestion-container"></div>
 							</div>
 						</div>
 						<div class="col-3">
@@ -42,6 +43,7 @@
 								<h1>Food</h1>
 								<div>
 									<input type="text" name="eat" placeholder="Italian, ice cream, beer" >
+									<div id="eat-suggestion-container"></div>
 								</div>
 							</div>
 						</div>
@@ -50,6 +52,7 @@
 								<h1>Event</h1>
 								<div>
 									<input type="text" name="event" placeholder="movies, Coldplay, The Filmore" >
+									<div id="event-suggestion-container"></div>
 								</div>
 							</div>
 						</div>
@@ -372,6 +375,9 @@
 	
 
 	<div> 
+		<!-- Query Suggestion Template -->
+		<div class="template query-suggestion-template query-suggestion"></div>
+
 		<!-- Date Template -->
 		<div class="template date-template row">
 			<div class="col-6 date-event">

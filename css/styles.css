@@ -428,6 +428,31 @@ h4 {
 	padding-top: 175px;
 }*/
 
+.col-search {
+	position: relative;
+	/*z-index: 20;*/
+}
+
+#location-suggestion-container,
+#eat-suggestion-container,
+#event-suggestion-container {
+	position: absolute;
+	background-color: #FFF;
+	width: 24.99%;
+	margin-right: 10px;
+	z-index: 100;
+}
+
+.query-suggestion {
+	cursor: pointer;
+	padding: 5px 0px 5px 0px;
+	border-bottom: 1px solid #D3C8B4;
+}
+
+.query-suggestion:hover {
+	background-color: #E7E4D5;
+}
+
 @media only screen and (min-width: 768px) {
 	.mini-calendar .col-day {
 		height: 30px;

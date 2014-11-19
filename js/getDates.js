@@ -4,11 +4,61 @@ $(function(){
 		getEventsEats();
 	});
 
+    $("input[type=text").keyup(function(){
+        getQuerySuggestions($(this).val(), $(this).attr("name") + "-suggestion-container");
+    });
+
     $(".results-container").hide();
     $(".search-title").hide();
     $(".search-options").hide();
     $(".search-details").hide();
+
+    $("input[type=text]").focusout(function() {
+        $("#location-suggestion-container").empty();
+        $("#eat-suggestion-container").empty();
+        $("#evet-suggestion-container").empty();
+    });
 });
+
+function getQuerySuggestions(query, container) {
+    $.ajax({
+        type: "post",
+        url: "http://suggestqueries.google.com/complete/search",
+        data: {
+            client: "firefox",
+            q: query
+        },
+        contentType: "application/json; charset=utf-8",
+        dataType: "jsonp",
+        success: function (data) {
+            formatQuerySuggestions(data[1], $("#" + container));
+        },
+        error: function (xhr, status, error) {
+            console.log(error);
+        }
+    });
+}
+
+function formatQuerySuggestions(data, container) {
+    container.empty();
+
+    var template = $(".query-suggestion-template");
+    var templateClone;
+
+    var entries = data.length
+    if(entries > 5)
+        entries = 5;
+
+    for(var i = 0; i < entries; i++) {
+        var result = data[i];
+        templateClone = template.clone();
+
+        templateClone.html(result);
+        templateClone.removeClass("query-suggestion-template");
+        templateClone.show();
+        container.append(templateClone);
+    }
+}
 
 function getEventsEats() {
     $("#search-form").fadeOut(1000);
@@ -28,13 +78,7 @@ function getEats() {
         type: "post",
         url: "js/googleplaces.php",
         success: function (data) {
-            // console.log("places: " + JSON.stringify(data['results')]);
-            // console.log(JSON.stringify(data["results"]));
-            // data = data["results"];
-            // if (data === 'undefined')
-            //     console.log("undefined");
-            // else
-                formatEats(data["results"]);
+            formatEats(data["results"]);
         },
         error: function (xhr, status, error) {
             // $(".loader").hide();
