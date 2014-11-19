@@ -281,6 +281,8 @@ h4 {
 	font-size: 80%;
 	/*width: 33.32%;*/
 	/*margin-bottom: 20px;*/
+	margin-right: 10px;
+	margin-left: 30px;
 }
 
 .plan-my-date span {
@@ -410,6 +412,22 @@ h4 {
 	margin-top: 10px;
 }
 
+/*.mainContent {
+	position: relative;
+	height: 100vh;
+	display: block;
+}
+
+#header {
+	position: absolute;
+	display: block;
+	width: 100%;
+}
+
+#search-bars {
+	padding-top: 175px;
+}*/
+
 @media only screen and (min-width: 768px) {
 	.mini-calendar .col-day {
 		height: 30px;
@@ -418,7 +436,7 @@ h4 {
 
 	.mini-calendar .col-week {
 		font-size: 50%;
-	/*}*/
+	}
 }
 
 @media (max-width: 768px) {
@@ -450,8 +468,8 @@ h4 {
 		height: 100px;
 	}
 
-	#plan-my-date {
-		width: 70%;
+	.plan-my-date {
+		margin-left: 0px;
 	}
 
 	#footer .col-3{

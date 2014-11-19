@@ -30,7 +30,11 @@ function getEats() {
         success: function (data) {
             // console.log("places: " + JSON.stringify(data['results')]);
             // console.log(JSON.stringify(data["results"]));
-            formatEats(data["results"]);
+            // data = data["results"];
+            // if (data === 'undefined')
+            //     console.log("undefined");
+            // else
+                formatEats(data["results"]);
         },
         error: function (xhr, status, error) {
             // $(".loader").hide();
@@ -46,7 +50,11 @@ function formatEats(data) {
 
     container.empty();
 
-    for(var i = 0; i < 10; i++) {
+    var entries = data.length;
+    if(entries > 10)
+        entries = 10;
+
+    for(var i = 0; i < entries; i++) {
         var result = data[i];
         templateClone = template.clone();
 
