@@ -48,10 +48,6 @@ $(function(){
 });
 
 function timeIni() {
-    // $(".startHour").keydown(function() {
-    //     numbersOnly(this);
-    // });
-
     $(".startHour").keyup(function() {
         numbersOnly(this);
         checkTime(this, "hour");        
@@ -144,6 +140,8 @@ function checkWindow() {
             $(".mini-calendar-big").toggle();
         });
 
+        $(".search-details-options").show();
+
 
     } else {
         $(".col-time").mouseover(function() {
@@ -161,6 +159,8 @@ function checkWindow() {
         $(".mini-calendar-day").click(function() {
             $(".mini-calendar-small").toggle();
         });
+
+        $(".search-details-options").hide();
     }
 }
 

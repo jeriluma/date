@@ -5,7 +5,7 @@ $(function(){
 	});
 
     $("input[type=text").keyup(function(){
-        getQuerySuggestions($(this).val(), $(this).attr("name") + "-suggestion-container");
+        // getQuerySuggestions($(this).val(), $(this).attr("name") + "-suggestion-container");
     });
 
     $(".results-container").hide();
@@ -70,24 +70,32 @@ function getEventsEats() {
 
     $('html, body').animate({scrollTop:0}, 'slow');
 
-    getEats();
+    var location = $("input[name=location").val();
+    var eat = $("input[name=eat").val();
+    var events = $("input[name=event").val();
+    var date = "";
+    var startTime = date + " "; // "2005-03-01 19:00:00"
+    var endTime = date + " ";
+    var query = location + " " + eat + " " + events + " " + startTime + " " + endTime;
+    console.log(query);
+
+    // getEats(location, eat, events, startTime, endTime);
 }
 
-function getEats() {
+function getEats(location, events, startTime, endTime) {
     $.ajax({
         type: "post",
         url: "js/googleplaces.php",
         success: function (data) {
-            formatEats(data["results"]);
+            formatEats(data["results"], location, events, startTime, endTime);
         },
         error: function (xhr, status, error) {
-            // $(".loader").hide();
             console.log(error);
         }
     });
 }
 
-function formatEats(data) {
+function formatEats(data, events, startTime, endTime) {
     var container = $(".results-container");
     var template = $(".results-template");
     var templateClone;
@@ -106,24 +114,22 @@ function formatEats(data) {
         templateClone.find(".result-eat-address").html(result["formatted_address"]);
 
         var location = result["formatted_address"];
-        getEvents(container, templateClone, location);  
+        getEvents(container, templateClone, location, events, startTime, endTime);  
     }
 }
 
-function getEvents(container, templateClone, location) {
+function getEvents(container, templateClone, location, events, startTime, endTime) {
     $.ajax({
         type: "post",
         url: "http://api.eventful.com/json/events/search",
         data: {
             app_key: "K7b4cBjVXBTFm2wW",
-            // keywords: "",
+            keywords: events,
             location: location,
             date: "Future",
-            // category: "",
-            page_size: "2"
-            // start_time: "2005-03-01 19:00:00",
-            // end_time: "2005-03-01 19:00:00"
-            
+            page_size: "2",
+            start_time: startTime,
+            end_time: endTime
         },
         contentType: "application/json; charset=utf-8",
         dataType: "jsonp",
@@ -139,17 +145,12 @@ function getEvents(container, templateClone, location) {
 function formatEvents(container, templateClone, data) {
     for(var i = 0; i < data.length; i++) {
         var result = data[i];
-        console.log(result);
         templateClone.find(".result-event-reservation").html(result["title"]);
         templateClone.find(".result-event-reservation").attr('href', result["url"]);
         templateClone.find(".result-event-venue").html(result["venue_name"]);
         templateClone.find(".result-event-address").html(formatAddress(result));
-        
         templateClone.find(".result-event-day").html(formatDay(result));
         templateClone.find(".result-event-time").html(formatTime(result));
-        
-        // templateClone.find(".result-event-description").html(result["description"]);
-
         templateClone.removeClass("results-template");
         templateClone.show();
         container.append(templateClone);
