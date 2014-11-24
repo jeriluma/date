@@ -77,9 +77,8 @@ function getEventsEats() {
     var startTime = getDate() + " " + getTime("start");
     var endTime = getDate() + " " + getTime("end");
     var query = location + " " + eat + " " + events + " " + startTime + " " + endTime;
-    console.log(query);
 
-    // getEats(location, eat, events, startTime, endTime);
+    getEats(location, eat, events, startTime, endTime);
 }
 
 function getDate() {
@@ -108,36 +107,45 @@ function getTime(status) {
         if(status == "start") {
             var startHour = $("input[name=startHour]").val();
             var startMin = $("input[name=startMin]").val();
-            var startAMPM = $(".startAMPM-highlight").html();
-            date = checkHour(parseInt(startHour), startAMPM) + ":" + startMin + ":00"    
+            var startAMPM = " " + $(".startAMPM-highlight").html();
+            date = checkHour(parseInt(startHour), startAMPM.trim()) + ":" + startMin + ":00"    
         } else { // end
             var endHour = $("input[name=endHour]").val();
             var endMin = $("input[name=endMin]").val();
-            var endAMPM = $(".endAMPM-highlight").html();
-            date = checkHour(parseInt(endHour), endAMPM) + ":" + endMin + ":00";
+            var endAMPM = " " + $(".endAMPM-highlight").html();
+            date = checkHour(parseInt(endHour), endAMPM.trim()) + ":" + endMin + ":00";
         }
     } 
     return date;
 }
 
 function checkHour(hour, AMPM) {
-    if (AMPM.trim() == "PM" && hour != 12) {
+    if (AMPM == "PM" && hour != 12) {
         hour += 12;
     } 
     return hour;
 }
 
 function getEats(location, events, startTime, endTime) {
-    $.ajax({
-        type: "post",
-        url: "js/googleplaces.php",
-        success: function (data) {
+    // $.ajax({
+    //     type: "get",
+    //     url: "js/googleplaces.php",
+    //     q: location,
+    //     success: function (data) {
+    //         formatEats(data["results"], location, events, startTime, endTime);
+    //     },
+    //     error: function (xhr, status, error) {
+    //         console.log("ERROR: " + error);
+    //     }
+    // });
+
+    $.get(
+        "js/googleplaces.php", 
+        {q: location}, 
+        function(data){
             formatEats(data["results"], location, events, startTime, endTime);
-        },
-        error: function (xhr, status, error) {
-            console.log(error);
         }
-    });
+    );
 }
 
 function formatEats(data, events, startTime, endTime) {

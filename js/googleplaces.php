@@ -22,7 +22,9 @@ function url_get_contents ($Url) {
 
 $request_url = "https://maps.googleapis.com/maps/api/place/textsearch/json?";
 $request_url .= "key=AIzaSyBnabShsSbFKZR8WU68BIB4IfFYP4JoHQ4"; 
-$request_url .= "&query=restaurants+in+Seattle";
+$request_url .= "&query=restaurants+in+" . urlencode ($_GET['q']);
+
+// echo $request_url;
 
 $url_contents = url_get_contents($request_url);
 echo $url_contents;
