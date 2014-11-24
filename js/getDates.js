@@ -4,6 +4,10 @@ $(function(){
 		getEventsEats();
 	});
 
+    $("input[type=text").keypress(function(event) {
+        if ( event.which == 13 ) getEventsEats();
+    });
+
     $("input[type=text").keyup(function(){
         // getQuerySuggestions($(this).val(), $(this).attr("name") + "-suggestion-container");
     });
@@ -71,6 +75,11 @@ function getEventsEats() {
     $('html, body').animate({scrollTop:0}, 'slow');
 
     var location = $("input[name=location").val();
+    location = location.trim();
+    if(location == "") {
+        location = "Seattle";
+    }
+
     var eat = $("input[name=eat").val();
     var events = $("input[name=event").val();
     var t = getTime().split(";");
@@ -127,18 +136,6 @@ function checkHour(hour, AMPM) {
 }
 
 function getEats(location, events, startTime, endTime) {
-    // $.ajax({
-    //     type: "get",
-    //     url: "js/googleplaces.php",
-    //     q: location,
-    //     success: function (data) {
-    //         formatEats(data["results"], location, events, startTime, endTime);
-    //     },
-    //     error: function (xhr, status, error) {
-    //         console.log("ERROR: " + error);
-    //     }
-    // });
-
     $.get(
         "js/googleplaces.php", 
         {q: location}, 
