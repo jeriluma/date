@@ -73,13 +73,58 @@ function getEventsEats() {
     var location = $("input[name=location").val();
     var eat = $("input[name=eat").val();
     var events = $("input[name=event").val();
-    var date = "";
-    var startTime = date + " "; // "2005-03-01 19:00:00"
-    var endTime = date + " ";
+    var t = getTime().split(";");
+    var startTime = getDate() + " " + getTime("start");
+    var endTime = getDate() + " " + getTime("end");
     var query = location + " " + eat + " " + events + " " + startTime + " " + endTime;
     console.log(query);
 
     // getEats(location, eat, events, startTime, endTime);
+}
+
+function getDate() {
+    var month = new Array();
+    month["January"] = 1;
+    month["February"] = 2;
+    month["March"] = 3;
+    month["April"] = 4;
+    month["May"] = 5;
+    month["June"] = 6;
+    month["July"] = 7;
+    month["August"] = 8;
+    month["September"] = 9;
+    month["October"] = 10;
+    month["November"] = 11;
+    month["December"] = 12;
+
+    var d = $(".calendar-month").html().split(" ");
+    return d[1] + "-" + month[d[0]] + "-" + $(".col-day-highlight span").html();
+}
+
+function getTime(status) {
+    // "2005-03-01 19:00:00"
+    var date = "";
+    if($(".time-message").html() == "") { // valid input
+        if(status == "start") {
+            var startHour = $("input[name=startHour]").val();
+            var startMin = $("input[name=startMin]").val();
+            var startAMPM = $(".startAMPM-highlight").html();
+            date = checkHour(parseInt(startHour), startAMPM) + ":" + startMin + ":00"    
+        } else { // end
+            var endHour = $("input[name=endHour]").val();
+            var endMin = $("input[name=endMin]").val();
+            var endAMPM = $(".endAMPM-highlight").html();
+            date = checkHour(parseInt(endHour), endAMPM) + ":" + endMin + ":00";
+        }
+    } 
+    return date;
+}
+
+function checkHour(hour, AMPM) {
+    if (AMPM.trim() == "PM" && hour != 12) {
+        hour += 12;
+    } 
+    return hour;
 }
 
 function getEats(location, events, startTime, endTime) {

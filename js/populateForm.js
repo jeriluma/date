@@ -336,7 +336,6 @@ function checkTime(t, type) {
 function numbersOnly(t) {
     var time = $(t).val();
     var isnum = /^\d+$/.test(time);
-    console.log(isnum);
     if(isnum == false) {
         $(t).val("");       
     }
