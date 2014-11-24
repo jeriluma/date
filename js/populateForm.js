@@ -41,8 +41,8 @@ $(function(){
     timeIni();
 
     $(".line").click(function() {
-        $("#search-form").fadeIn(1000);
-        $(".line-message").fadeIn(1000);
+        $("#search-form").toggle();
+        $(".line-message").toggle();
     });
     
 });

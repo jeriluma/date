@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+	<title>Plan My Date</title>
+	 <meta charset="UTF-8">
+    <meta name="keywords" content=""> 
+    <meta name="author" content="jeriluma">
+    <title>Plan My Date</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link href="img/logoicon-01.png" rel="shortcut icon" />
+	<script src="js/JQuery.js"></script>
+
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
+    <script src="js/populateForm.js" type="text/javascript"></script>
+    <script src="js/getDates.js" type="text/javascript"></script>
+</head>
+<body>
+	
+
+	<div class="mainContent">
+		<div id="header">
+			<div class="container">
+				<a href="index.html">
+					<div id="title"><span>pmd</span></div>
+					<div id="subtitle">plan my date</div>
+				</a>
+			</div>
+		</div>
+
+	
+		<div class="container about">
+			<h1>About PMD</h1>
+			<h2>What is PMD?</h2>
+			<p>
+				PMD (Plan My Date) is a date searching service. PMD finds food and event date combinations for you and your loved one.
+			</p>
+
+			<h2>How Does PMD Work?</h2>
+			<p>
+				First PMD uses user input about a Location, a Food, and an Event. PMD first searches for a food place in a given location, then using that food place's location, searches for an event near by.
+			</p>
+			<p><img src="" alt="How PMD works diagram" class="pmd-diagram"></p>
+			<p>
+				I used the Google Places API to find "Restaurants in LOCATION". Google Places API is similar to Yelp, where document places's ratings and other factors. Google Places is based off Zagat which collects restaurant ratings. 
+			</p>
+			<p>
+				I used the Eventful API to search for events based on a food place's location, a user's preference, and a user's input data about date and time. Eventful keeps track of real time events, so event suggestions are always current.
+			</p>
+			<p>
+				Curious to know how it's all done? Find my work on <a href="https://github.com/jeriluma/date">GitHub</a>.
+			</p>
+	
+			<h2>PMD Features</h2>
+			<h3>Random Dates</h3>
+			<p>
+				If you can't decide what kind of dates to search for...there's a search form to help you decide your date. Or you could input no information into the search boxes and get random date ideas.
+			</p>
+			<h3>Reservations</h3>
+			<p>
+				Did you find a date idea? Great! You can reserve via Eventful that event by clicking on it's title!
+			</p>
+		</div>
+
+		<div id="footer">
+			<div class="row">
+				<div class="col-3">
+					<div class="eventful-badge eventful-small">
+						<img src="http://api.eventful.com/images/powered/eventful_58x20.gif"
+							alt="Local Events, Concerts, Tickets">
+						<p><a href="http://eventful.com/">Events</a> by Eventful</p>
+					</div>
+					<div>
+						<img src="img/powered-by-google-on-white.png" alt="Powered by Google">
+					</div>
+				</div>
+				<div class="col-3 footer-information">University of Washington</div>
+				<div class="col-3 footer-information">INFO 320</div>
+				<div class="col-3 footer-information">
+					<div><a href="https://github.com/jeriluma/date">Jerisa Lumansoc</a></div>
+					<div><a href="about.html">About</a></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

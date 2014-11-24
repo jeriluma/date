@@ -6,3 +6,5 @@
 	- Time
 	- Food
 	- Event
+- in results page, link addresses
+- add reservation to restaraunts 
