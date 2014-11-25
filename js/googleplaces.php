@@ -20,9 +20,13 @@ function url_get_contents ($Url) {
     return $output;
 }
 
+$locationEat = explode(";", $_GET['q']);
+$eat = $locationEat[0];
+$location = $locationEat[1];
+
 $request_url = "https://maps.googleapis.com/maps/api/place/textsearch/json?";
 $request_url .= "key=AIzaSyBnabShsSbFKZR8WU68BIB4IfFYP4JoHQ4"; 
-$request_url .= "&query=restaurants+in+" . urlencode ($_GET['q']);
+$request_url .= "&query=" . urlencode ($eat) . "food+in+" . urlencode ($location);
 
 // echo $request_url;
 

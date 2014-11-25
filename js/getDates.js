@@ -135,10 +135,10 @@ function checkHour(hour, AMPM) {
     return hour;
 }
 
-function getEats(location, events, startTime, endTime) {
+function getEats(location, eat, events, startTime, endTime) {
     $.get(
         "js/googleplaces.php", 
-        {q: location}, 
+        {q: eat + ";" + location}, 
         function(data){
             formatEats(data["results"], location, events, startTime, endTime);
         }
