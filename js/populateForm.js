@@ -50,23 +50,39 @@ $(function(){
 function timeIni() {
     $(".startHour").keyup(function() {
         numbersOnly(this);
-        checkTime(this, "hour");        
+        checkTime(this, "hour"); 
+        timeLable();       
     });
 
     $(".startMin").keyup(function(){
         numbersOnly(this);
         checkTime(this, "minute");         
+        timeLable();
     });
 
     $(".endHour").keyup(function() {
         numbersOnly(this);
         checkTime(this, "hour");        
+        timeLable();
     });
 
     $(".endMin").keyup(function(){
         numbersOnly(this);
         checkTime(this, "minute");         
+        timeLable();
     });
+
+    $(".startAMPM").click(timeLable());
+    $(".endAMPM").click(timeLable());
+}
+
+function timeLable() {
+    $(".search-time").hide();
+    if($(".time-message").html() == "" ) {
+        $(".search-start-time").html($(".startHour").val() + ":" + $(".startMin").val() + " " + $(".startAMPM-highlight").html());
+        $(".search-end-time").html($(".endHour").val() + ":" + $(".endMin").val() + " " + $(".endAMPM-highlight").html());
+        $(".search-time").show();
+    }
 }
 
 // hides template and hover over descriptions

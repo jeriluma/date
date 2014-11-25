@@ -64,14 +64,6 @@
 			</div>
 			<div class="container">
 				<div class="row search-details-options">
-					<div class="search-deails">
-						<div class="search-date"></div>
-						<div class="search-time">
-							<span class="search-start-time"></span>
-							<span> - </span>
-							<span class="search-end-time"></span>
-						</div>
-					</div>
 					<div class="search-options-button">
 						<div class="search-options-button-more transition">
 							<div>More Options</div>
@@ -82,9 +74,18 @@
 							<div><img src="img/Arrow-down.jpg"></div>
 						</div>
 					</div>
-					
 				</div>
 				<div class="row search-options">
+					<div class="row">
+						<div class="search-deails">
+							<div class="search-date"></div>
+							<div class="search-time">
+								<span class="search-start-time"></span>
+								<span> - </span>
+								<span class="search-end-time"></span>
+							</div>
+						</div>
+					</div>
 					<div class="calendar col-8">
 						<h1>Date</h1>
 						<h2 class="calendar-month"></h2>
@@ -123,15 +124,15 @@
 							<div class="row startTime">
 								<h2>Start Time</h2>
 								<div class="col-2">
-									<input type="text" name="startHour" maxlength="2" size="2" class="startHour" placeholder="12">
+									<input type="text" name="startHour" maxlength="2" size="2" class="startHour" placeholder="12" value="12">
 								</div>
 								<div class="col-1">
 									<input type="text" name="startColon" placeholder=":" disabled>
 								</div>
 								<div class="col-2">
-									<input type="text" name="startMin"  maxlength="2" size="2" class="startMin" placeholder="00">
+									<input type="text" name="startMin"  maxlength="2" size="2" class="startMin" placeholder="00" value="00">
 								</div>
-								<div class="col-2 startAMPM transition">
+								<div class="col-2 startAMPM startAMPM-highlight transition">
 									AM
 								</div>
 								<div class="col-2 startAMPM transition">
@@ -141,18 +142,18 @@
 							<div class="row endTime">
 								<h2>End Time</h2>
 								<div class="col-2">
-									<input type="text" name="endHour" class="endHour" placeholder="12">
+									<input type="text" name="endHour" class="endHour" placeholder="12" value="12">
 								</div>
 								<div class="col-1">
 									<input type="text" name="endColon" placeholder=":" disabled>
 								</div>
 								<div class="col-2">
-									<input type="text" name="endMin" class="endMin" placeholder="00">
+									<input type="text" name="endMin" class="endMin" placeholder="00" value="00">
 								</div>
 								<div class="col-2 endAMPM transition">
 									AM
 								</div>
-								<div class="col-2 endAMPM transition">
+								<div class="col-2 endAMPM endAMPM-highlight transition">
 									PM
 								</div>
 							</div>
