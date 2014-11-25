@@ -77,12 +77,8 @@ function timeIni() {
 }
 
 function timeLable() {
-    $(".search-time").hide();
-    if($(".time-message").html() == "" ) {
-        $(".search-start-time").html($(".startHour").val() + ":" + $(".startMin").val() + " " + $(".startAMPM-highlight").html());
-        $(".search-end-time").html($(".endHour").val() + ":" + $(".endMin").val() + " " + $(".endAMPM-highlight").html());
-        $(".search-time").show();
-    }
+    $(".search-start-time").html($(".startHour").val() + ":" + $(".startMin").val() + " " + $(".startAMPM-highlight").html());
+    $(".search-end-time").html($(".endHour").val() + ":" + $(".endMin").val() + " " + $(".endAMPM-highlight").html());
 }
 
 // hides template and hover over descriptions
