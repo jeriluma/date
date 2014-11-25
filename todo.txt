@@ -1,6 +1,5 @@
-- date indicator
 - template/container food and events in search form
-- connect search form UI to query
+- connect SEARCH FORM UI to query
 	- Location
 	- Day
 	- Time
