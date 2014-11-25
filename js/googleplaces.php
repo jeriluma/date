@@ -25,7 +25,7 @@ $eat = $locationEat[0];
 $location = $locationEat[1];
 
 $request_url = "https://maps.googleapis.com/maps/api/place/textsearch/json?";
-$request_url .= "key=AIzaSyBnabShsSbFKZR8WU68BIB4IfFYP4JoHQ4"; 
+$request_url .= "key=" . "AIzaSyBnabShsSbFKZR8WU68BIB4IfFYP4JoHQ4";
 $request_url .= "&query=" . urlencode ($eat) . "food+in+" . urlencode ($location);
 
 $url_contents = url_get_contents($request_url);
