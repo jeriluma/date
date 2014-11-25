@@ -1,3 +1,4 @@
+- allow for time seraching in "future" not always 1 days
 - template/container food and events in search form
 - connect SEARCH FORM UI to query
 	- Location
