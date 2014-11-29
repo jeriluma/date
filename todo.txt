@@ -1,8 +1,3 @@
 - template/container food and events in search form
-- connect SEARCH FORM UI to query
-	- Location
-	- Day
-	- Time
-	- Food
-	- Event
+- connect SEARCH FORM UI to query boxes
 - about page: competitors, users, etc
