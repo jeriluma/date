@@ -174,8 +174,8 @@
 		<div class="container">
 			<div id="search-form">
 				<h1>Select a City</h1>
-				<div class="cities">
-					<div class="row">
+				<div class="cities cities-container row">
+					<!-- <div class="row">
 						<div class="col-3 col-3-location">
 							<div class="col-location col-location-highlight transition">
 								<h3 class="col-location-city">Seattle</h3>
@@ -223,7 +223,7 @@
 								<div>TX</div>
 							</div>				
 						</div>
-					</div>
+					</div> -->
 				</div>
 				
 				<h1>Select a Day</h1>
@@ -355,30 +355,31 @@
 			<div class="results-container"></div>
 		</div>
 	</div>
-		<div id="footer">
-			<div class="row">
-				<div class="col-3">
-					<div class="eventful-badge eventful-small">
-						<img src="http://api.eventful.com/images/powered/eventful_58x20.gif"
-							alt="Local Events, Concerts, Tickets">
-						<p><a href="http://eventful.com/">Events</a> by Eventful</p>
-					</div>
-					<div>
-						<img src="img/powered-by-google-on-white.png" alt="Powered by Google">
-					</div>
+
+	<div id="footer">
+		<div class="row">
+			<div class="col-3">
+				<div class="eventful-badge eventful-small">
+					<img src="http://api.eventful.com/images/powered/eventful_58x20.gif"
+						alt="Local Events, Concerts, Tickets">
+					<p><a href="http://eventful.com/">Events</a> by Eventful</p>
 				</div>
-				<div class="col-3 footer-information">
-					<p>University of Washington</p>
-					<p>INFO 320</p>
-				</div>
-				<div class="col-3 footer-information">
-					<a href="https://github.com/jeriluma/date">Jerisa Lumansoc</a>
-				</div>
-				<div class="col-3 footer-information">
-					<a href="about.html">About</a>
+				<div>
+					<img src="img/powered-by-google-on-white.png" alt="Powered by Google">
 				</div>
 			</div>
+			<div class="col-3 footer-information">
+				<p>University of Washington</p>
+				<p>INFO 320</p>
+			</div>
+			<div class="col-3 footer-information">
+				<a href="https://github.com/jeriluma/date">Jerisa Lumansoc</a>
+			</div>
+			<div class="col-3 footer-information">
+				<a href="about.html">About</a>
+			</div>
 		</div>
+	</div>
 
 	<div> 
 		<!-- Query Suggestion Template -->
@@ -431,6 +432,14 @@
 					<p class="result-event-day"></p>
 					<p class="result-event-time"></p>
 				</div>
+			</div>
+		</div>
+
+		<!-- Cities Template -->
+		<div class="template col-3 col-3-location location-template">
+			<div class="col-location transition">
+				<h3 class="col-location-city"></h3>
+				<div class="col-location-state"></div>
 			</div>
 		</div>
 	</div>

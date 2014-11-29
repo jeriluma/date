@@ -2,6 +2,7 @@
 $(function(){
     hideTemplateDesc();
     calendar();
+    populateLocations();
     highlight();
     checkWindow();
     $(window).resize(function() {
@@ -45,6 +46,7 @@ $(function(){
         $(".line-message").toggle();
     });
     
+
 });
 
 function timeIni() {
@@ -350,5 +352,36 @@ function numbersOnly(t) {
     var isnum = /^\d+$/.test(time);
     if(isnum == false) {
         $(t).val("");       
+    }
+}
+
+function populateLocations() {
+    var locations = new Array();
+    locations[0] = {"city" : "Seattle", "state" : "WA"};
+    locations[1] = {"city" : "Portand", "state" : "OR"};
+    locations[2] = {"city" : "Los Angeles", "state" : "CA"};
+    locations[3] = {"city" : "San Francisco", "state" : "CA"};
+    locations[4] = {"city" : "Austin", "state" : "TX"};
+    locations[5] = {"city" : "Las Vegas", "state" : "NV"};
+    locations[6] = {"city" : "Chicago", "state" : "IL"};
+    locations[7] = {"city" : "New York", "state" : "NY"};
+
+    var container = $(".cities-container");
+    var template = $(".location-template");
+    var templateClone;
+
+    container.empty();
+
+    for(var i = 0; i < locations.length; i++) {
+        var location = locations[i];
+        templateClone = template.clone();
+        templateClone.find(".col-location-city").html(location["city"]);
+        templateClone.find(".col-location-state").html(location["state"]);
+        templateClone.removeClass("location-template");
+        if(i == 0) {
+            templateClone.find(".col-location").addClass("col-location-highlight");
+        }
+        templateClone.show();
+        container.append(templateClone);
     }
 }
