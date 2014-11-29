@@ -510,6 +510,10 @@ a {
 	width: 100%;
 }
 
+.startTime div, .endTime div {
+	overflow: hidden;
+}
+
 @media only screen and (min-width: 768px) {
 	.mini-calendar .col-day {
 		height: 30px;
