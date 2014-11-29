@@ -3,6 +3,8 @@ $(function(){
     hideTemplateDesc();
     calendar();
     populateLocations();
+    populateEats();
+    populateEvents();
     highlight();
     checkWindow();
     $(window).resize(function() {
@@ -381,6 +383,62 @@ function populateLocations() {
         if(i == 0) {
             templateClone.find(".col-location").addClass("col-location-highlight");
         }
+        templateClone.show();
+        container.append(templateClone);
+    }
+}
+
+function populateEats() {
+    var eats = new Array();
+    eats[0] = {"title" : "Seattle", "description" : "WA"};
+    eats[1] = {"title" : "Portand", "description" : "OR"};
+    eats[2] = {"title" : "Los Angeles", "description" : "CA"};
+    eats[3] = {"title" : "San Francisco", "description" : "CA"};
+    eats[4] = {"title" : "Austin", "description" : "TX"};
+    eats[5] = {"title" : "Las Vegas", "description" : "NV"};
+    eats[6] = {"title" : "Chicago", "description" : "IL"};
+    eats[7] = {"title" : "New York", "description" : "NY"};
+
+    var container = $(".eat-container");
+    var template = $(".eat-template");
+    var templateClone;
+
+    container.empty();
+
+    for(var i = 0; i < eats.length; i++) {
+        var eat = eats[i];
+        templateClone = template.clone();
+        templateClone.find(".eats-title").html(eat["title"]);
+        templateClone.find(".eats-description").html(eat["description"]);
+        templateClone.removeClass("eat-template");
+        templateClone.show();
+        container.append(templateClone);
+    }
+}
+
+function populateEvents() {
+    var events = new Array();
+    events[0] = {"title" : "Seattle", "description" : "WA"};
+    events[1] = {"title" : "Portand", "description" : "OR"};
+    events[2] = {"title" : "Los Angeles", "description" : "CA"};
+    events[3] = {"title" : "San Francisco", "description" : "CA"};
+    events[4] = {"title" : "Austin", "description" : "TX"};
+    events[5] = {"title" : "Las Vegas", "description" : "NV"};
+    events[6] = {"title" : "Chicago", "description" : "IL"};
+    events[7] = {"title" : "New York", "description" : "NY"};
+
+    var container = $(".event-container");
+    var template = $(".event-template");
+    var templateClone;
+
+    container.empty();
+
+    for(var i = 0; i < events.length; i++) {
+        var e = events[i];
+        templateClone = template.clone();
+        templateClone.find(".event-title").html(e["title"]);
+        templateClone.find(".event-description").html(e["description"]);
+        templateClone.removeClass("eat-template");
         templateClone.show();
         container.append(templateClone);
     }
