@@ -26,6 +26,17 @@ html, body {
 	height: 100%;
 }
 
+.mainContent {
+	min-height: 737px;
+}
+
+/*#footer {
+	position: absolute;
+	right: 0;
+    left: 0;
+    bottom: 0;
+}*/
+
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 12pt;
@@ -78,6 +89,8 @@ h1 {
 	text-align: center;
 	font-size: 200%;
 	color: #FFF;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 #title span {
