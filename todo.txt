@@ -1,4 +1,3 @@
-- allow for time seraching in "future" not always 1 days
 - template/container food and events in search form
 - connect SEARCH FORM UI to query
 	- Location
@@ -6,5 +5,4 @@
 	- Time
 	- Food
 	- Event
-- in results page, link addresses to google maps
-- add reservation to restaraunts via opentable?
+- about page: competitors, users, etc
