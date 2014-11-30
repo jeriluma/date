@@ -53,8 +53,13 @@ h1 {
 	margin-bottom: 10px;
 } 
 
+.about {
+	padding: 10px;
+}
+
 .about p {
 	margin-bottom: 10px;
+	/*margin: 10px;*/
 }
 
 .about h1, .about h3 {
@@ -526,6 +531,7 @@ a {
 .startTime div, .endTime div {
 	overflow: hidden;
 }
+
 
 @media only screen and (min-width: 768px) {
 	.mini-calendar .col-day {
