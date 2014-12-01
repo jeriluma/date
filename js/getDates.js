@@ -4,6 +4,10 @@ $(function(){
 		getEventsEats();
 	});
 
+    $("#search-form-pmd").click(function() {
+        getEventsEatsForm();
+    });
+
     $("input[type=text").keypress(function(event) {
         if ( event.which == 13 ) getEventsEats();
     });
@@ -21,6 +25,12 @@ $(function(){
         $("#location-suggestion-container").empty();
         $("#eat-suggestion-container").empty();
         $("#evet-suggestion-container").empty();
+    });
+
+    $.getScript("js/populateForm.js", function(){
+
+       console.log("Script loaded and executed.");
+       // Here you can use anything you defined in the loaded script
     });
 });
 
@@ -64,6 +74,14 @@ function formatQuerySuggestions(data, container) {
     }
 }
 
+function getEventsEatsForm() {
+    $.each(formLocations, function( key, value ) {
+        console.log( key + ": " + value );
+    });
+
+    // getEventsEats();
+}
+
 function getEventsEats() {
     $("#search-form").fadeOut(1000);
     $(".select-form").fadeOut(1000);
@@ -80,8 +98,8 @@ function getEventsEats() {
         location = "Seattle";
     }
 
-    var eat = $("input[name=eat").val();
-    var events = $("input[name=event").val();
+    var eat = $("input[name=eat]").val();
+    var events = $("input[name=event]").val();
     var t = getTime().split(";");
     var startTime = getDate() + " " + getTime("start");
     var endTime = getDate() + " " + getTime("end");
