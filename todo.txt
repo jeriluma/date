@@ -1,3 +1,0 @@
-- fill out events and foods
-- on the search form submit, move highlighted-boxes into search boxes, then query
-- about page: competitors, users, etc
