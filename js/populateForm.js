@@ -394,14 +394,14 @@ function populateLocations() {
 
 function populateEats() {
     var eats = new Array();
-    eats[0] = {"title" : "Seattle", "description" : "WA"};
-    eats[1] = {"title" : "Portand", "description" : "OR"};
-    eats[2] = {"title" : "Los Angeles", "description" : "CA"};
-    eats[3] = {"title" : "San Francisco", "description" : "CA"};
-    eats[4] = {"title" : "Austin", "description" : "TX"};
-    eats[5] = {"title" : "Las Vegas", "description" : "NV"};
-    eats[6] = {"title" : "Chicago", "description" : "IL"};
-    eats[7] = {"title" : "New York", "description" : "NY"};
+    eats[0] = {"title" : "Hamburgers", "description" : ""};
+    eats[1] = {"title" : "Steak", "description" : ""};
+    eats[2] = {"title" : "Italian", "description" : ""};
+    eats[3] = {"title" : "Asian", "description" : ""};
+    eats[4] = {"title" : "Seafood", "description" : ""};
+    eats[5] = {"title" : "Cafe", "description" : ""};
+    eats[6] = {"title" : "Coffee", "description" : ""};
+    eats[7] = {"title" : "Ice Cream", "description" : ""};
 
     var container = $(".eat-container");
     var template = $(".eat-template");
@@ -422,14 +422,14 @@ function populateEats() {
 
 function populateEvents() {
     var events = new Array();
-    events[0] = {"title" : "Seattle", "description" : "WA"};
-    events[1] = {"title" : "Portand", "description" : "OR"};
-    events[2] = {"title" : "Los Angeles", "description" : "CA"};
-    events[3] = {"title" : "San Francisco", "description" : "CA"};
-    events[4] = {"title" : "Austin", "description" : "TX"};
-    events[5] = {"title" : "Las Vegas", "description" : "NV"};
-    events[6] = {"title" : "Chicago", "description" : "IL"};
-    events[7] = {"title" : "New York", "description" : "NY"};
+    events[0] = {"title" : "Film", "description" : ""};
+    events[1] = {"title" : "Concert", "description" : ""};
+    events[2] = {"title" : "Nightlight", "description" : ""};
+    events[3] = {"title" : "Comedy", "description" : ""};
+    events[4] = {"title" : "Sports", "description" : ""};
+    events[5] = {"title" : "Performing Arts", "description" : ""};
+    events[6] = {"title" : "Museums", "description" : ""};
+    events[7] = {"title" : "Outdoor", "description" : ""};
 
     var container = $(".event-container");
     var template = $(".event-template");
