@@ -219,7 +219,7 @@ function getEvents(container, templateClone, location, events, startTime, endTim
             keywords: events,
             location: location,
             date: "Future",
-            page_size: "2",
+            // page_size: "2",
             start_time: startTime,
             end_time: endTime
         },
@@ -235,18 +235,17 @@ function getEvents(container, templateClone, location, events, startTime, endTim
 }
 
 function formatEvents(container, templateClone, data) {
-    for(var i = 0; i < data.length; i++) {
-        var result = data[i];
-        templateClone.find(".result-event-reservation").html(result["title"]);
-        templateClone.find(".result-event-reservation").attr('href', result["url"]);
-        templateClone.find(".result-event-venue").html(result["venue_name"]);
-        templateClone.find(".result-event-address").html(formatAddress(result));
-        templateClone.find(".result-event-day").html(formatDay(result));
-        templateClone.find(".result-event-time").html(formatTime(result));
-        templateClone.removeClass("results-template");
-        templateClone.show();
-        container.append(templateClone);
-    }
+    var i = Math.floor(Math.random() * data.length);
+    var result = data[i];
+    templateClone.find(".result-event-reservation").html(result["title"]);
+    templateClone.find(".result-event-reservation").attr('href', result["url"]);
+    templateClone.find(".result-event-venue").html(result["venue_name"]);
+    templateClone.find(".result-event-address").html(formatAddress(result));
+    templateClone.find(".result-event-day").html(formatDay(result));
+    templateClone.find(".result-event-time").html(formatTime(result));
+    templateClone.removeClass("results-template");
+    templateClone.show();
+    container.append(templateClone);
 
     $(".search-title").fadeIn(1000);
     $(".search-navi").fadeIn(1000);
