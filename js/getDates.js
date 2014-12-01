@@ -1,8 +1,13 @@
 // document ready function
 $(function(){
-	$(".plan-my-date").click(function() {
+
+	$("#pmd-1").click(function() {
 		getEventsEats();
 	});
+
+    $("#pmd-2").click(function() {
+        getEventsEatsForm();
+    });
 
     $("input[type=text").keypress(function(event) {
         if ( event.which == 13 ) getEventsEats();
@@ -64,6 +69,43 @@ function formatQuerySuggestions(data, container) {
     }
 }
 
+function getEventsEatsForm() {
+    var location = $("#search-form .col-location-highlight");
+    var city = location.find(".col-location-city").html(); 
+    var state = location.find(".col-location-state").html();
+    location = city + ", " + state;
+    $("input[name=location").val(location);
+
+    var time = $(".col-time-highlight .col-real-time").html().split(";");
+    var start = time[0].split(":");
+    var end = time[1].split(":");
+    $("input[name=startHour]").val(start[0]);
+    $("input[name=startMin]").val(start[1]);
+    $("input[name=endHour]").val(end[0]);
+    $("input[name=endMin]").val(end[1]);
+    $(".startAMPM").removeClass("startAMPM-highlight");
+    $(".endAMPM").removeClass("endAMPM-highlight");
+    if(start[2] == "AM") {
+        $(".startAM").addClass("startAMPM-highlight");
+    } else {
+        $(".startPM").addClass("startAMPM-highlight");
+    }
+    if(end[2] == "AM") {
+        $(".endAM").addClass("endAMPM-highlight");
+    } else {
+        $(".endPM").addClass("endAMPM-highlight");
+    }
+
+    var e = $("#search-form .col-event-highlight").find(".event-title").html();
+    $("input[name=event").val(e);
+
+    var eat = $("#search-form .col-eat-highlight").find(".eats-title").html();
+    $("input[name=eat]").val(eat);
+
+    timeIni();
+    getEventsEats();
+}
+
 function getEventsEats() {
     $("#search-form").fadeOut(1000);
     $(".select-form").fadeOut(1000);
@@ -74,13 +116,13 @@ function getEventsEats() {
 
     $('html, body').animate({scrollTop:0}, 'slow');
 
-    var location = $("input[name=location").val();
+    var location = $("input[name=location]").val();
     location = location.trim();
     if(location == "") {
         location = "Seattle";
     }
 
-    var eat = $("input[name=eat").val();
+    var eat = $("input[name=eat]").val();
     var events = $("input[name=event").val();
     var t = getTime().split(";");
     var startTime = getDate() + " " + getTime("start");

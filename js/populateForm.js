@@ -99,19 +99,23 @@ function hideTemplateDesc() {
 // Handles the highlighting of elements in times, events, and eats
 function highlight() {
     $(".col-location").click(function() {
-        $(this).toggleClass("col-location-highlight");
+        $(".col-location").removeClass("col-location-highlight");
+        $(this).addClass("col-location-highlight");
     });
 
     $(".col-time").click(function() {
-        $(this).toggleClass("col-time-highlight");
+        $(".col-time").removeClass("col-time-highlight");
+        $(this).addClass("col-time-highlight");
     });
 
     $(".col-event").click(function() {
-        $(this).toggleClass("col-eat-highlight");
+        $(".col-event").removeClass("col-event-highlight");
+        $(this).addClass("col-event-highlight");
     });
 
     $(".col-eat").click(function() {
-        $(this).toggleClass("col-eat-highlight");
+        $(".col-eat").removeClass("col-eat-highlight");
+        $(this).addClass("col-eat-highlight");
     });
 
     $(".startAMPM").click(function() {

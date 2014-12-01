@@ -56,7 +56,7 @@
 							</div>
 						</div>
 						<div class="col-3">
-							<div class="plan-my-date transition"><span>Plan My Date</span></div>
+							<div class="plan-my-date transition" id="pmd-1"><span>Plan My Date</span></div>
 						</div>
 					</div>
 				</form>
@@ -127,16 +127,15 @@
 									<input type="text" name="startHour" maxlength="2" size="2" class="startHour" placeholder="12" value="12">
 								</div>
 								<div class="col-1">
-									<!-- <input type="text" name="startColon" placeholder=":"> -->
 									:
 								</div>
 								<div class="col-2">
 									<input type="text" name="startMin"  maxlength="2" size="2" class="startMin" placeholder="00" value="00">
 								</div>
-								<div class="col-2 startAMPM startAMPM-highlight transition">
+								<div class="col-2 startAMPM startAM startAMPM-highlight transition">
 									AM
 								</div>
-								<div class="col-2 startAMPM transition">
+								<div class="col-2 startAMPM startPM transition">
 									PM
 								</div>
 							</div>
@@ -146,16 +145,15 @@
 									<input type="text" name="endHour" class="endHour" placeholder="12" value="12">
 								</div>
 								<div class="col-1">
-									<!-- <input type="text" name="endColon" placeholder=":" disabled> -->
 									:
 								</div>
 								<div class="col-2">
 									<input type="text" name="endMin" class="endMin" placeholder="00" value="00">
 								</div>
-								<div class="col-2 endAMPM transition">
+								<div class="col-2 endAMPM endAM transition">
 									AM
 								</div>
-								<div class="col-2 endAMPM endAMPM-highlight transition">
+								<div class="col-2 endAMPM endPM endAMPM-highlight transition">
 									PM
 								</div>
 							</div>
@@ -215,28 +213,28 @@
 						<div class="col-time transition">
 							<h3>Morning</h3>
 							<div>Bright and early!</div>
-							<span class="col-real-time template">04:00:00;10:00:00</span>
+							<span class="col-real-time template">04:00:AM;10:00:AM</span>
 						</div>
 					</div>
 					<div class="col-3">
 						<div class="col-time transition">
 							<h3>Midday</h3>
 							<div>Lunch? Maybe an afternoon snack..</div>
-							<span class="col-real-time template">10:00:00;16:00:00</span>
+							<span class="col-real-time template">10:00:AM;4:00:PM</span>
 						</div>
 					</div>
 					<div class="col-3">
-						<div class="col-time transition">
+						<div class="col-time col-time-highlight transition">
 							<h3>Early Evening</h3>
 							<div>That night life.</div>
-							<span class="col-real-time template">16:00:00;22:00:00</span>
+							<span class="col-real-time template">4:00:PM;9:00:PM</span>
 						</div>
 					</div>
 					<div class="col-3">
 						<div class="col-time transition">
 							<h3>Late Evening</h3>
 							<div>That late night light.</div>
-							<span class="col-real-time template">20:00:00;00:00:00</span>
+							<span class="col-real-time template">8:00:PM;12:00:PM</span>
 						</div>
 					</div>
 				</div>				
@@ -247,7 +245,7 @@
 				<h1>Select Events</h1>
 				<div class="row event-container"></div>
 
-				<div class="plan-my-date transition"><span>Plan My Date</span></div>
+				<div class="plan-my-date transition" id="pmd-2"><span>Plan My Date</span></div>
 			</div>
 		</div>
 
