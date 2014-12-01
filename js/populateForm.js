@@ -1,13 +1,3 @@
-var formLocations = new Array();
-formLocations["Seattle, WA"] = false;
-formLocations["Portand, OR"] = false;
-formLocations["Los Angeles, CA"] = false;
-formLocations["San Francisco, CA"] = false;
-formLocations["Austin, TX"] = false;
-formLocations["Las Vegas, NV"] = false;
-formLocations["Chicago, IL"] = false;
-formLocations["New York, NY"] = false;
-
 // document ready function
 $(function(){
     hideTemplateDesc();
@@ -110,10 +100,6 @@ function hideTemplateDesc() {
 function highlight() {
     $(".col-location").click(function() {
         $(this).toggleClass("col-location-highlight");
-        var city = $(this).find(".col-location-city").html();
-        var state = $(this).find(".col-location-state").html();
-        var key = city + ", " + state;
-        formLocations[key] = true;
     });
 
     $(".col-time").click(function() {
