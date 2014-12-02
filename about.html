@@ -29,60 +29,48 @@
 				<h1>About PMD</h1>
 
 				<h2>What is PMD?</h2>
-				<p>
-					PMD (Plan My Date) is a date searching service. PMD finds food and event date combinations for you and your loved one.
-				</p>
-				<p>
-					Would people be interested in this tool? 
-					Who? When/Where? Why?
+				<p>PMD (Plan My Date) is a date idea searching service. PMD finds food and event date combinations for you and your loved one. PMD is great for people who are seeking date ideas. You can search for date ideas based on location, food, events, day, and time. PMD's date ideas are based on highly rated reviewed food places and relevant real-time events. After finding a date combination, you can reserve an event through Eventful. Then you can be on your happy way with your loved one on a date!</p>
 
-					competitors
-					why is it better...
-					How is it unique? 
-					What does it do that other apps don't do?	
-				</p>
+				<h2>PMD is the best!</h2>
+				<p>There aren't that many services that help you find date ideas... or many none in existance! If you try searching for date ideas online, you'll find many magazine articles like "Top 50 date ideas!" or forum posts asking about date ideas. These articles and forums just list places to eat or places to go, which makes its hard for date seekers to filter date ideas.</p>
 
-				<h2>How Does PMD Work?</h2>
-				<p>
-					First PMD uses user input about a Location, a Food, and an Event. PMD first searches for a food place in a given location, then using that food place's location, searches for an event near by. If PMD can't find results within the set user parameters, PMD will find other relevant results.
-				</p>
-				<p>
-					<img src="img/How PMD Works Diagram-01.png" alt="How PMD works diagram" class="pmd-diagram">
-				</p>
-				<p>
-					The reason for basing dates off of food places first is due to the API calling restrictions. Google Places sets a low limit on calling their API, compared to the unlimited calls for Eventful.
-				</p>
-				<p>
-					I used the Google Places API to find "Restaurants in LOCATION". Google Places API is similar to Yelp, where document places's ratings and other factors. Google Places is based off Zagat which collects restaurant ratings. To properly use this API, from the front-end I send an AJAX request to my own server in the back-end, which then calls upon Google Places, and sends back information to the front-end. From there, JSON data is parsed through using templates/containers to display information.
-				</p>
-				<p>
-					I used the Eventful API to search for events based on a food place's location, a user's preference, and a user's input data about date and time. Eventful keeps track of real time events, so event suggestions are always current. Using the Eventful API was simpler than Google Places, in which that I could send a direct AJAX request to Eventful to receive JSON data to parse to display information in the front-end.
-				</p>
-				<p>
-					By default, PMD searches for highly rated restaraunts in Seattle and events happening that day.
-				</p>
+				<p><a href="http://www.yelp.com">Yelp</a> is a close competitor to PMD. Through Yelp you can search for <a href="http://www.yelp.com/search?find_desc=Fun+Date+Night+Ideas&find_loc=Seattle%2C+WA">"Fun Date Night Ideas"</a>. Yelp provides highly rated places for dates, like food places and event venues. However, PMD is better because it suggests real-time events through <a href="http://eventful.com/">Eventful</a>, rather than highly rated static event venues. Real-time events are more relevant to the date idea seeker. The date idea seek wants to know what they can do, not what is a good place to do something.</p>
+
+				<h2>How to use PMD</h2>
+				<p>There are two ways to use PMD: 1) using the search boxes. 2) using the search form. The first way is great if you know what kind of date suggestions you are seeking. The second way is great if you need help finding a date ideas through location, food, and event suggestions.</p>
+
+				<h2>How does PMD find a Date Idea?</h2>
+				<p>First PMD uses user input about a Location, a Food, and an Event. PMD first searches for a food place in a given location, then using that food place's location, searches for an event near by. If PMD can't find results within the set user parameters, PMD will find other relevant results.</p>
+				
+				<p><img src="img/How PMD Works Diagram-01.png" alt="How PMD works diagram" class="pmd-diagram"></p>
+				
+				<p>The reason for basing dates off of food places first is due to the API calling restrictions. Google Places sets a low limit on calling their API, compared to the unlimited calls for Eventful.</p>
+				
+				<p>I used the Google Places API to find "Restaurants in LOCATION". Google Places API is similar to Yelp, where document places's ratings and other factors. Google Places is based off Zagat which collects restaurant ratings. To properly use this API, from the front-end I send an AJAX request to my own server in the back-end, which then calls upon Google Places, and sends back information to the front-end. From there, JSON data is parsed through using templates/containers to display information.</p>
+				
+				<p>I used the Eventful API to search for events based on a food place's location, a user's preference, and a user's input data about date and time. Eventful keeps track of real time events, so event suggestions are always current. Using the Eventful API was simpler than Google Places, in which that I could send a direct AJAX request to Eventful to receive JSON data to parse to display information in the front-end.</p>
+				
+				<p>By default, PMD searches for highly rated restaraunts in Seattle and events happening that day.</p>
 
 				<h2>PMD User Interface</h2>
-				<p>
-					I was very inspired by <a href="https://www.virginamerica.com/">Virgin America</a> to create this user interface. I loved their simple, minimalistic, flat design that was colorful but not overbearing.
-
-					I wanted a color pallet that emulates affection and love, so I choose a <a href="http://www.colourlovers.com/palette/1387198/good_tea_morning">Good Morning Tea</a> Pallet.
-				</p>
+				<p>I was very inspired by <a href="https://www.virginamerica.com/">Virgin America</a> to create this user interface. I loved their simple, minimalistic, flat design that was colorful but not overbearing. I wanted a color pallet that emulates affection and love, so I choose a <a href="http://www.colourlovers.com/palette/1387198/good_tea_morning">Good Morning Tea</a> Pallet.</p>
 		
-				<h2>PMD Features</h2>
+				<h2>PMD's Features</h2>
 				<h3>Random Dates</h3>
-				<p>
-					If you can't decide what kind of dates to search for...there's a search form to help you decide your date. Or you could input no information into the search boxes and get random date ideas.
-				</p>
+				<p>If you can't decide what kind of dates to search for...there's a search form to help you decide your date. Or you could input no information into the search boxes and get random date ideas.</p>
 				<h3>Reservations</h3>
-				<p>
-					Did you find a date idea? Great! You can reserve via Eventful that event by clicking on it's title!
-				</p>
+				<p>Did you find a date idea? Great! You can reserve via Eventful that event by clicking on it's title!</p>
+
+				<h2>PMD's Future Features</h2>
+				<div>
+					<ul>
+						<li>- Add reservations to food places via <a href="http://opentable.herokuapp.com/">OpenTable API</a></li>
+						<li>- Add map and directions between food places and event via <a href="https://developers.google.com/maps/">Google Map API</a></li>
+					</ul>
+				</div>
 
 				<h2>Source Code</h2>
-				<p>
-					Curious to know how it's all done? Find my work on <a href="https://github.com/jeriluma/date" alt="Github">GitHub</a>.
-				</p>
+				<p>Curious to know how it's all done? Find my work on <a href="https://github.com/jeriluma/date" alt="Github">GitHub</a>.</p>
 			</div>
 		</div>
 
