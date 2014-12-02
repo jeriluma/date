@@ -182,32 +182,41 @@ function getEats(location, eat, events, startTime, endTime) {
         "js/googleplaces.php", 
         {q: eat + ";" + location}, 
         function(data){
-            formatEats(data["results"], location, events, startTime, endTime);
+            if (data != undefined ) {
+                formatEats(data["status"], data["results"], location, events, startTime, endTime);
+            } else {
+                $(".results-container").html("No results found.");
+            }
         }
     );
 }
 
-function formatEats(data, events, startTime, endTime) {
-    var container = $(".results-container");
-    var template = $(".results-template");
-    var templateClone;
+function formatEats(status, data, events, startTime, endTime) {
+    if (status == "ZERO_RESULTS") {
+        $(".results-container").html("No results found.");
+    } else {
+        var container = $(".results-container");
+        var template = $(".results-template");
+        var templateClone;
 
-    container.empty();
+        container.empty();
 
-    var entries = data.length;
-    if(entries > 10)
-        entries = 10;
+        var entries = data.length;
+        if(entries > 10)
+            entries = 10;
 
-    for(var i = 0; i < entries; i++) {
-        var result = data[i];
-        templateClone = template.clone();
+        for(var i = 0; i < entries; i++) {
+            var result = data[i];
+            templateClone = template.clone();
 
-        templateClone.find(".result-eat-title").html(result["name"]);
-        templateClone.find(".result-eat-address").html(result["formatted_address"]);
+            templateClone.find(".result-eat-title").html(result["name"]);
+            templateClone.find(".result-eat-address").html(result["formatted_address"]);
 
-        var location = result["formatted_address"];
-        getEvents(container, templateClone, location, events, startTime, endTime);  
-    }
+            var location = result["formatted_address"];
+            getEvents(container, templateClone, location, events, startTime, endTime);  
+        }
+
+    }  
 }
 
 function getEvents(container, templateClone, location, events, startTime, endTime) {
